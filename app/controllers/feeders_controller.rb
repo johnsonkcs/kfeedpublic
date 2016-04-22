@@ -29,7 +29,7 @@ class FeedersController < ApplicationController
   def create
     @feeding = Feeding.find(params[:feeding_id])
     @feeder = @feeding.feeders.create(user_id: current_user.id)
-    redirect_to feeding_feeder_path
+    redirect_to feeding_feeder_path(@feeding, @feeder)
 
     # respond_to do |format|
     #   if @feeder.save
