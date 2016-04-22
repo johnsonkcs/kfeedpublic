@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @feeding.user_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @feeding.date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @feeding.time %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @feeding.place %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @feeding.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @feeding.longitude %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @feeding.price %>
+</p>
+
+<p>
+  <strong>Feeding pics:</strong>
+  <%= @feeding.feeding_pics %>
+</p>
+
+<p>
+  <strong>Pax limit:</strong>
+  <%= @feeding.pax_limit %>
+</p>
+
+<%= link_to 'Edit', edit_feeding_path(@feeding) %> |
+<%= link_to 'Back', feedings_path %>

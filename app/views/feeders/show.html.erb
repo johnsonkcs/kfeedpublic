@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @feeder.user_id %>
+</p>
+
+<p>
+  <strong>Feeding:</strong>
+  <%= @feeder.feeding_id %>
+</p>
+
+<%= link_to 'Edit', edit_feeder_path(@feeder) %> |
+<%= link_to 'Back', feeders_path %>
