@@ -1,4 +1,4 @@
-<%= form_for(@feeder) do |f| %>
+<%= form_for [@feeding, @feeder] do |f| %>
   <% if @feeder.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@feeder.errors.count, "error") %> prohibited this feeder from being saved:</h2>

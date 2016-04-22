@@ -11,10 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
+
   <div class="field">
     <%= f.label :date %><br>
     <%= f.date_select :date %>
@@ -27,22 +24,12 @@
     <%= f.label :place %><br>
     <%= f.text_area :place %>
   </div>
-  <div class="field">
-    <%= f.label :latitude %><br>
-    <%= f.text_field :latitude %>
-  </div>
-  <div class="field">
-    <%= f.label :longitude %><br>
-    <%= f.text_field :longitude %>
-  </div>
+
   <div class="field">
     <%= f.label :price %><br>
-    <%= f.number_field :price %>
+    <%= f.text_field :price %>
   </div>
-  <div class="field">
-    <%= f.label :feeding_pics %><br>
-    <%= f.text_field :feeding_pics %>
-  </div>
+
   <div class="field">
     <%= f.label :pax_limit %><br>
     <%= f.number_field :pax_limit %>
