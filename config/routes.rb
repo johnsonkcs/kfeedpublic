@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  get 'transactions/new'
+
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   resources :payments
   resources :feeders
   resources :feedings
   resources :users
+  resources :transactions, only: [:new, :create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

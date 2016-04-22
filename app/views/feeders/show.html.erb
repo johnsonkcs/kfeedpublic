@@ -10,5 +10,14 @@
   <%= @feeder.feeding_id %>
 </p>
 
+
 <%= link_to 'Edit', edit_feeder_path(@feeder) %> |
 <%= link_to 'Back', feeders_path %>
+<div class="form-container radius-box glassy-bg small-10 small-centered medium-8 large-6 columns">
+  <h2 class="mbs">New Transaction</h2>
+  <%= form_tag transactions_path do%>
+    <p>Please enter your payment details:</p>
+    <div id="dropin"></div>
+    <%=submit_tag "Pay #{current_user.cart_total_price}$", class: "button mt1" %>
+  <%end%>
+</div>
