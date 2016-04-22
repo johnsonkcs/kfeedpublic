@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+Hello <%= @user.name %>,
+<%= image_tag @user.profile_pic %>
+
+<p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
