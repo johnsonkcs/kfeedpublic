@@ -24,7 +24,8 @@ class FeedingsController < ApplicationController
   # POST /feedings
   # POST /feedings.json
   def create
-    @feeding = Feeding.new(feeding_params)
+    @user = current_user
+    @feeding = @user.feedings.new(feeding_params)
 
     respond_to do |format|
       if @feeding.save
@@ -69,6 +70,6 @@ class FeedingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def feeding_params
-      params.require(:feeding).permit(:user_id, :date, :time, :place, :latitude, :longitude, :price, :feeding_pics, :pax_limit)
+      params.require(:feeding).permit(:user_id, :date, :time, :place, :latitude, :longitude, :price, :pax_limit, { :feeding_pics => [] })
     end
 end

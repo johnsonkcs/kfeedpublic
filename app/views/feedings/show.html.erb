@@ -37,7 +37,9 @@
 
 <p>
   <strong>Feeding pics:</strong>
-  <%= @feeding.feeding_pics %>
+  <% @feeding.feeding_pics.each do |feeding_pic| %>
+  <p><%= image_tag feeding_pic.url(:full).to_s %></p>
+  <% end %>
 </p>
 
 <p>
