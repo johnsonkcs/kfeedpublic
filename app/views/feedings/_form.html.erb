@@ -1,0 +1,53 @@
+<%= form_for(@feeding) do |f| %>
+  <% if @feeding.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@feeding.errors.count, "error") %> prohibited this feeding from being saved:</h2>
+
+      <ul>
+      <% @feeding.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :time %><br>
+    <%= f.text_field :time %>
+  </div>
+  <div class="field">
+    <%= f.label :place %><br>
+    <%= f.text_area :place %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br>
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br>
+    <%= f.text_field :longitude %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.number_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :feeding_pics %><br>
+    <%= f.text_field :feeding_pics %>
+  </div>
+  <div class="field">
+    <%= f.label :pax_limit %><br>
+    <%= f.number_field :pax_limit %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

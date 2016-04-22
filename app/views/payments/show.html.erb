@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Feeder:</strong>
+  <%= @payment.feeder_id %>
+</p>
+
+<p>
+  <strong>Braintree:</strong>
+  <%= @payment.braintree_id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @payment.status %>
+</p>
+
+<p>
+  <strong>Last 4:</strong>
+  <%= @payment.last_4 %>
+</p>
+
+<%= link_to 'Edit', edit_payment_path(@payment) %> |
+<%= link_to 'Back', payments_path %>
