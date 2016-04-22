@@ -5,11 +5,21 @@ class FeedingsController < ApplicationController
   # GET /feedings.json
   def index
     @feedings = Feeding.all
+    @hash = Gmaps4rails.build_markers(@feedings) do |feeding, marker|
+      marker.lat feeding.latitude
+      marker.lng feeding.longitude
+      marker.infowindow feeding.name
+    end
   end
 
   # GET /feedings/1
   # GET /feedings/1.json
   def show
+    @hash = Gmaps4rails.build_markers(@feeding) do |f, marker|
+      marker.lat f.latitude
+      marker.lng f.longitude
+      marker.infowindow f.name
+    end
   end
 
   # GET /feedings/new
@@ -70,6 +80,6 @@ class FeedingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def feeding_params
-      params.require(:feeding).permit(:user_id, :date, :time, :place, :latitude, :longitude, :price, :pax_limit, { :feeding_pics => [] })
+      params.require(:feeding).permit(:user_id, :date, :time, :place, :latitude, :longitude, :price, :pax_limit, :name, { :feeding_pics => [] })
     end
 end
