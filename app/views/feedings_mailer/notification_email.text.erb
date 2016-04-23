@@ -1,0 +1,30 @@
+    <% if @user.name.blank? %>
+    Hi <%= @user.email %> !
+    <% else %>
+    Hi <%= @user.name %> !
+    <% end %>
+    
+    <% if @feeding.user.name.blank? %>
+    <%= @feeding.user.email %> just created a new feeding event!
+    <% else %>
+    <%= @feeding.user.name %> just created a new feeding event!
+    <% end %>
+  
+  
+    Details
+    
+    Date: <%= @feeding.date.to_s %> 
+    Time: <%= @feeding.time %> 
+    Place: <%= @feeding.place %> 
+    Price: <%= @feeding.price.to_s %> 
+    
+
+    Wanna Join?
+
+    Go to our website to check it out!
+
+
+    Cheers,
+    Jane @ KFeed,
+    Chief Kindness Officer
+
