@@ -2,6 +2,14 @@
 <html>
 <head>
   <title>Kfeedapp</title>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,6 +17,48 @@
 <body>
 
 <%= yield %>
+
+<!-- BEGIN .footer -->
+<div class="footer">
+
+  <!-- BEGIN .row -->
+  <div class="row">
+
+    <!-- BEGIN .content -->
+    <div class="content">
+
+    <!-- BEGIN .footer-widgets -->
+    <div class="footer-widgets">
+
+      <div id="text-2" class="widget widget_text" style="
+    text-align: center;"><div class="footer-widget"><h6>A Team KFeed Production</h6>     
+    </div></div>
+    <!-- END .footer-widgets -->
+    </div>
+    </div>
+  <!-- END .row -->
+  </div>
+  <!-- BEGIN .footer-information -->
+  <div class="footer-information">
+
+    <!-- BEGIN .footer-content -->
+    <div class="footer-content">
+
+      <div class="align-left">
+        <p>Copyright &copy; 2016 &middot; All Rights Reserved &middot; KFeed Global Inc</p>
+        <p><a href="http://www.johnsonkhoo.com/" target="_blank">Produced</a> by <a href="http://www.johnsonkhoo.com/" target="_blank">KFeed Global Inc</a> &middot; <a href="http://johnsonkhoo.com/" target="_blank" title="Amazing Hosting">Dragon Slayer Hosting</a> &middot; <a href="http://johnsonkhoo.com/">Special Thanks To</a> &middot; <a href="http://johnsonkhoo.com/"> Yazed Jamal | Danial Zainul | New Jone Wee | Lena Fong | Johnson Khoo | Next Academy </a></p>
+      </div>
+
+      <div class="align-right">
+
+      </div>
+    <!-- END .footer-content -->
+    </div>
+  <!-- END .footer-information -->
+  </div>
+<!-- END .footer -->
+</div>
+  </footer>
 
 </body>
 </html>
