@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+  <div style="text-align: center">
+    <% if @user.name.blank? %>
+    <h1>Hi <%= @user.email %> !</h1>
+    <% else %>
+    <h1>Hi <%= @user.name %> !</h1>
+    <% end %>
+    <% if @feeding.user.name.blank? %>
+    <p>
+      <%= @feeding.user.email %> just created a new feeding event!
+    </p>
+    <% else %>
+    <p>
+      <%= @feeding.user.name %> just created a new feeding event!
+    </p>
+    <% end %>
+    <br>
+    <h2><u>Details</u></h2>
+    <br>
+    <p> Date: <%= @feeding.date.to_s %> </p>
+    <p> Time: <%= @feeding.time %> </p>
+    <p> Place: <%= @feeding.place %> </p>
+    <p> Price: <%= @feeding.price.to_s %> </p>
+
+    <br>
+
+    <h3> Wanna Join? </h3>
+
+    <p> Go to our website to check it out! </p>
+
+    <br>
+
+    <p>Cheers,</p> 
+    <p>Jane @ KFeed,</p>
+    <p>Chief Kindness Officer</p>
+
+  </div>
+  </body>
+</html>
