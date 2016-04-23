@@ -31,6 +31,9 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'carrierwave',  github:'carrierwaveuploader/carrierwave'
 gem 'mini_magick'
+gem 'searchkick'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 
 
 # Use ActiveModel has_secure_password

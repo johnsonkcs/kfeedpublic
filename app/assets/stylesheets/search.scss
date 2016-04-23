@@ -1,0 +1,570 @@
+// Place all the styles related to the search controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+a {
+	color: #69C;
+	text-decoration: none;
+}
+a:hover {
+	color: #F60;
+}
+
+p {
+	margin: 0 0 20px;
+}
+
+
+input {
+	outline: none;
+}
+input[type=search] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 100%;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+	display: none; 
+}
+
+
+input[type=search] {
+	background: #ededed url(http://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+	border: solid 1px #ccc;
+	padding: 9px 10px 9px 32px;
+	width: 100px;
+	height: 12px;
+	
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+	
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+input[type=search]:focus {
+	width: 130px;
+	background-color: #fff;
+	border-color: #66CC75;
+	
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+
+input:-moz-placeholder {
+	color: #999;
+}
+input::-webkit-input-placeholder {
+	color: #999;
+}
+
+/* Demo 2 */
+#demo-2 input[type=search] {
+	width: 15px;
+	padding-left: 10px;
+	color: transparent;
+	cursor: pointer;
+}
+#demo-2 input[type=search]:hover {
+	background-color: #fff;
+}
+#demo-2 input[type=search]:focus {
+	width: 130px;
+	padding-left: 32px;
+	color: #000;
+	background-color: #fff;
+	cursor: auto;
+}
+#demo-2 input:-moz-placeholder {
+	color: transparent;
+}
+#demo-2 input::-webkit-input-placeholder {
+	color: transparent;
+}
+
+ 
+
+
+    .cf:before, .cf:after{
+      content:"";
+      display:table;
+    }
+    
+    .cf:after{
+      clear:both;
+    }
+
+    .cf{
+      zoom:1;
+    }
+
+    /*-------------------------------------*/	
+    
+    .form-wrapper {
+        width: 100%;
+        padding: 15px;
+        margin: 30px auto 50px auto;
+        background: #444;
+        background: rgba(0,0,0,.2);
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        -moz-box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+        -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+        box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+    }
+
+    .carousel-caption{
+    top: 30%;
+    bottom: auto;
+    }
+
+    #homecap{
+    top: 28%;
+    bottom: auto;
+    }
+
+
+    @media screen and (max-width: 1166px){
+    .form-wrapper{
+    width:90%;
+    }
+    #johnson-btn{
+    font-size:14px !important;
+    width:100px;
+    }
+    #johnson-input{
+    width:79%;
+    }
+    .carousel-caption{
+    top: 30%;
+    bottom: auto;
+    }
+    #homecap{
+    top: 28%;
+    bottom: auto;
+    }
+    #boomshaka{
+    display: none;
+    }
+    }
+
+    @media screen and (max-width: 1050px){
+    .form-wrapper{
+    width:80%;
+    }
+    #johnson-btn{
+    font-size:14px !important;
+    width:90px;
+    }
+    #johnson-input{
+    width:77%;
+    }
+    .carousel-caption{
+    top: 30%;
+    bottom: auto;
+    }
+    #homecap{
+    top: 24%;
+    bottom: auto;
+    }
+    #hometop{
+    font-size: 34px;
+    }
+    }
+
+
+    @media screen and (max-width: 963px){
+    .form-wrapper{
+    width:80%;
+    }
+    #johnson-btn{
+    font-size:14px !important;
+    width:85px;
+    }
+    #johnson-input{
+    width:75%;
+    }
+    .carousel-caption{
+    top: 25%;
+    bottom: auto;
+    }
+    #homecap{
+    top: 20%;
+    bottom: auto;
+    }
+    #hometop{
+    font-size: 30px;
+    }
+    }
+
+    @media screen and (max-width: 835px){
+    .form-wrapper{
+    width:80%;
+    }
+    #johnson-btn{
+    font-size:12px !important;
+    width:80px;
+    }
+    #johnson-input{
+    width:75%;
+    }
+    .carousel-caption{
+    top: 20%;
+    bottom: auto;
+    }
+    #homecap{
+    top: 18%;
+    bottom: auto;
+    }
+    #hometop{
+    font-size: 25px;
+    }
+    }
+
+    @media screen and (max-width: 769px){
+    .form-wrapper{
+    width:80%;
+    }
+    #johnson-btn{
+    font-size:12px !important;
+    width:80px;
+    }
+    #johnson-input{
+    width:75%;
+    }
+    .carousel-caption{
+    top: 19%;
+    bottom: auto;
+    }
+    #cap-text{
+    font-size: 32px;
+    }
+    #homecap{
+    top: 16.5%;
+    bottom: auto;
+    }
+    #hometop{
+    font-size: 25px;
+    }
+    #boomsearch{
+    display: none;
+    }
+    }
+
+
+    @media screen and (max-width: 693px){
+    .form-wrapper{
+    width:70%;
+    }
+    #johnson-btn{
+    font-size:12px !important;
+    width:80px;
+    }
+    #johnson-input{
+    width:65%;
+    }
+    .carousel-caption{
+    top: 13%;
+    bottom: auto;
+    }
+    #cap-text{
+    font-size: 32px;
+    }
+    #homecap{
+    top: 10%;
+    bottom: auto;
+    }
+    #hometop{
+    font-size: 22px;
+    }
+    }
+
+    @media screen and (max-width: 581px){
+    .form-wrapper{
+    width:70%;
+    }
+    #johnson-btn{
+    font-size:12px !important;
+    width:80px;
+    }
+    #johnson-input{
+    width:60%;
+    }
+    .carousel-caption{
+    top: 10%;
+    bottom: auto;
+    }
+    #cap-text{
+    font-size: 28px;
+    }
+    #homecap{
+    top: -2%;
+    bottom: auto;
+    }
+    #hometop{
+    font-size: 18px;
+    }
+    }
+
+    @media screen and (max-width: 504px){
+    .form-wrapper{
+    width:70%;
+    }
+    #johnson-btn{
+    font-size:12px !important;
+    width:70px;
+    }
+    #johnson-input{
+    width:50%;
+    }
+    .carousel-caption{
+    top: 2%;
+    bottom: auto;
+    }
+    #cap-text{
+    font-size: 24px;
+    }
+    #homecap{
+    top: 5%;
+    bottom: auto;
+    }
+    #hometop{
+    font-size: 26px;
+    }
+    #homemid{
+    display: none;
+    }
+    }
+
+    @media screen and (max-width: 420px){
+    .form-wrapper{
+    width:100%;
+    }
+    #johnson-btn{
+    font-size:10px !important;
+    width:80px;
+    }
+    #johnson-input{
+    width:65%;
+    }
+    .carousel-caption{
+    top: -7%;
+    bottom: auto;
+    }
+    #cap-text{
+    font-size: 30px;
+    }
+    #homecap{
+    top: 5%;
+    bottom: auto;
+    }
+    #hometop{
+    font-size: 27px;
+    }
+    #homemid{
+    display: none;
+    }
+    #signsignbtn{
+    font-size: small;
+    padding: 9px 9px;
+    }
+    }
+
+    @media screen and (max-width: 376px){
+    .form-wrapper{
+    width:100%;
+    }
+    #johnson-btn{
+    font-size:10px !important;
+    width:80px;
+    }
+    #johnson-input{
+    width:62%;
+    }
+    .carousel-caption{
+    top: -7%;
+    bottom: auto;
+    }
+    #cap-text{
+    font-size: 30px;
+    }
+    #homecap{
+    top: -2%;
+    bottom: auto;
+    }
+    #hometop{
+    font-size: 25px;
+    }
+    #homemid{
+    display: none;
+    }
+    #signsignbtn{
+    font-size: xx-small;
+    padding: 6px 6px;
+    }
+    }
+
+     @media screen and (max-width: 361px){
+    .form-wrapper{
+    width:100%;
+    }
+    #johnson-btn{
+    font-size:10px !important;
+    width:60px;
+    }
+    #johnson-input{
+    width:68%;
+    }
+    .carousel-caption{
+    top: -15%;
+    bottom: auto;
+    }
+    #cap-text{
+    font-size: 26px;
+    }
+    #homecap{
+    top: -5%;
+    bottom: auto;
+    }
+    #hometop{
+    font-size: 23px;
+    }
+    #homemid{
+    display: none;
+    }
+    }
+
+     @media screen and (max-width: 321px){
+    .form-wrapper{
+    width:100%;
+    }
+    #johnson-btn{
+    font-size:10px !important;
+    width:60px;
+    }
+    #johnson-input{
+    width:63%;
+    }
+    .carousel-caption{
+    top: -18%;
+    bottom: auto;
+    }
+    #cap-text{
+    font-size: 24px;
+    }
+    #homecap{
+    top: -5%;
+    bottom: auto;
+    }
+    #hometop{
+    font-size: 22px;
+    }
+    #homemid{
+    display: none;
+    }
+    #shakabtn{
+    font-size: 12px;
+    }
+    }
+
+
+
+    
+    .form-wrapper input {
+        color: black;
+        width: 82%;
+        height: 10%;
+        padding: 10px 5px;
+        float: left;    
+        font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
+        border: 0;
+        background: #eee;
+        -moz-border-radius: 3px 0 0 3px;
+        -webkit-border-radius: 3px 0 0 3px;
+        border-radius: 3px 0 0 3px;      
+    }
+    
+    .form-wrapper input:focus {
+        outline: 0;
+        background: #fff;
+        -moz-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+        -webkit-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+        box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+    }
+    
+    .form-wrapper input::-webkit-input-placeholder {
+       color: #999;
+       font-weight: normal;
+       font-style: italic;
+    }
+    
+    .form-wrapper input:-moz-placeholder {
+        color: #999;
+        font-weight: normal;
+        font-style: italic;
+    }
+    
+    .form-wrapper input:-ms-input-placeholder {
+        color: #999;
+        font-weight: normal;
+        font-style: italic;
+    }    
+    
+    .form-wrapper button {
+		overflow: visible;
+        position: relative;
+        float: right;
+        border: 0;
+        padding: 0;
+        cursor: pointer;
+        height: 40px;
+        width: 110px;
+        font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
+        color: #fff;
+        text-transform: uppercase;
+        background: #d83c3c;
+        -moz-border-radius: 0 3px 3px 0;
+        -webkit-border-radius: 0 3px 3px 0;
+        border-radius: 0 3px 3px 0;      
+        text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+    }   
+      
+    .form-wrapper button:hover{		
+        background: #e54040;
+    }	
+      
+    .form-wrapper button:active,
+    .form-wrapper button:focus{   
+        background: #c42f2f;    
+    }
+    
+    .form-wrapper button:before {
+        content: '';
+        position: absolute;
+        border-width: 8px 8px 8px 0;
+        border-style: solid solid solid none;
+        border-color: transparent #d83c3c transparent;
+        top: 12px;
+        left: -6px;
+    }
+    
+    .form-wrapper button:hover:before{
+        border-right-color: #e54040;
+    }
+    
+    .form-wrapper button:focus:before{
+        border-right-color: #c42f2f;
+    }    
+    
+    .form-wrapper button::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
