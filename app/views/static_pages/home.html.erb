@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p> index page </p>
+<p> Hello <%= current_user.name %> </p><br>
+
+<% if user_signed_in? %>
+	<%= link_to 'Profile Page', user_path(current_user.id) %><br>
+	<%= link_to 'View all Feedings', feedings_path %><br>	
+	<%= link_to 'View all Feeders', feeders_path %><br>
+	<%= link_to 'Signout', destroy_user_session_path, method: :delete %>
+<% else %>
+	<%= link_to 'Sign Up', new_user_registration_path %> | 
+	<%= link_to 'Sign In', new_user_session_path %><br>
+<%end%>
