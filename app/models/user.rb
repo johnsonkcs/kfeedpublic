@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
 
+  has_many :feedings
+
   mount_uploader :profile_pic, ProfilePicUploader
 
   def self.from_omniauth(auth)

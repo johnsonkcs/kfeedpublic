@@ -1,9 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-Hello <%= current_user.name %>, <br>
-<%= image_tag current_user.profile_pic.url(:thumb) %>
+	Hello <%= current_user.name %>, <br>
 <p>
+
+<div class="img-thumbnail">
+	<%= image_tag current_user.profile_pic.url(:thumb) %>
+</div><br>
+
+<%= link_to 'Create New Feeding', new_feeding_path %><br>
+<%= link_to 'Your Feedings', user_feedings_path(current_user.id) %> | <%= link_to 'All Feedings', feedings_path %><br>
 
 <%= link_to 'Edit', edit_user_registration_path %> |
 <%= link_to 'Back', root_path %>
