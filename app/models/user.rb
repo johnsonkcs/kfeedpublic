@@ -5,9 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
 
+  mount_uploader :profile_pic, ProfilePicUploader
+
   def self.from_omniauth(auth)
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-        byebug
         user.provider = auth.provider
         user.uid = auth.uid
         user.email = auth.info.email

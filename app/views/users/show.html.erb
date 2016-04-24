@@ -1,10 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-Hello <%= @user.name %>,
-<%= image_tag @user.profile_pic %>
-
+Hello <%= current_user.name %>, <br>
+<%= image_tag current_user.profile_pic.url(:thumb) %>
 <p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Edit', edit_user_registration_path %> |
+<%= link_to 'Back', root_path %>
