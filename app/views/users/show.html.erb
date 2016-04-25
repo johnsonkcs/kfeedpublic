@@ -1,11 +1,22 @@
-<p id="notice"><%= notice %></p>
 
+<% unless notice.blank? %>
+<div class="alert alert-success" role="alert">
+<p id="notice"><%= notice %></p>
+</div>
+<% end %>
+
+<% if @user.name.blank? == false %>
 <p>
-	Hello <%= current_user.name %>, <br>
+	Hello <%= @user.name %>, <br>
 <p>
+<% end %>
+
+<% if @user.profile_pic.blank? %>
+<p>User has no profile picture yet</p>
+<% else %>
 
 <div class="img-thumbnail">
-	<%= image_tag current_user.profile_pic.url(:thumb) %>
+	<%= image_tag @user.profile_pic.url(:thumb) %>
 </div><br>
 
 <p>
@@ -20,6 +31,7 @@
 <p>
 <%= image_tag @user.profile_pic.url(:full).to_s %>
 </p>
+<% end %>
 
 <%= link_to 'Create New Feeding', new_feeding_path %><br>
 <%= link_to 'Your Feedings', user_feedings_path(current_user.id) %> | <%= link_to 'All Feedings', feedings_path %><br>

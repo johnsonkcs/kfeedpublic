@@ -1,6 +1,12 @@
 <div class="container-fluid">
 <div class="row">
+
+
+<% unless notice.blank? %>
+<div class="alert alert-success" role="alert">
 <p id="notice"><%= notice %></p>
+</div>
+<% end %>
 
 
 

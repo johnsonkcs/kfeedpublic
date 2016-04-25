@@ -20,11 +20,8 @@ class FeedingsController < ApplicationController
   # GET /feedings/1
   # GET /feedings/1.json
   def show
-    @feeding_feeders = []
     
-    @feeding.feeders.each do |feeder|
-    @feeding_feeders << feeder
-    end
+    @feeding_feeders = @feeding.feeders.where(paystatus: :authorized).order(created_at: :desc)
     
     @hash = Gmaps4rails.build_markers(@feeding) do |f, marker|
       marker.lat f.latitude

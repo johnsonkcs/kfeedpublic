@@ -1,4 +1,9 @@
+
+<% unless notice.blank? %>
+<div class="alert alert-success" role="alert">
 <p id="notice"><%= notice %></p>
+</div>
+<% end %>
 
 <h1>Listing Feeders</h1>
 <%= will_paginate @feeders %>
