@@ -10,7 +10,7 @@ class TransactionsController < ApplicationController
               payment_method_nonce: params[:payment_method_nonce])
     if @result.success?
     	payment_record 
-      redirect_to feeding_path(@feeding), notice: "Congraulations! Your transaction has been successfully!"
+      redirect_to feeding_path(@feeding), notice: "Congraulations! Your transaction has been successfully processed!"
     else
       payment_record
       flash[:alert] = "Something went wrong while processing your transaction. Please try again!"

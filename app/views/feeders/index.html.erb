@@ -16,9 +16,9 @@
       <tr>
         <td><%= feeder.user_id %></td>
         <td><%= feeder.feeding_id %></td>
-        <td><%= link_to 'Show', feeder %></td>
-        <td><%= link_to 'Edit', edit_feeder_path(feeder) %></td>
-        <td><%= link_to 'Destroy', feeder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', user_feeders_path(current_user.id) %></td>
+        <td><%= link_to 'Edit', edit_user_feeder_path(current_user.id, feeder.id) %></td>
+        <td><%= link_to 'Destroy', user_feeder_path(current_user.id, feeder.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,6 +26,5 @@
 
 <br>
 
-<%= link_to 'New Feeder', new_feeder_path %><br>
 <%= link_to 'Back', root_path %>
 

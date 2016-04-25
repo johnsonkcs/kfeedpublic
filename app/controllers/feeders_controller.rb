@@ -4,7 +4,7 @@ class FeedersController < ApplicationController
   # GET /feeders
   # GET /feeders.json
   def index
-    @feeders = Feeder.all
+    @feeders = Feeder.where(user_id: params[:user_id]) 
   end
 
   # GET /feeders/1

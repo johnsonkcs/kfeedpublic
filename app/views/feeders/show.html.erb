@@ -1,5 +1,6 @@
+<div class="container-fluid">
+<div class="row">
 <p id="notice"><%= notice %></p>
-
 <p>
   <strong>User:</strong>
   <%= @feeder.user_id %>
@@ -19,4 +20,8 @@
 <%= label_tag(:save_record, "Save credit card info") %>
     <%=submit_tag "Pay #{@feeding.price}$", class: "button mt1" %>
   <%end%>
+</div>
+<br>
+<br>
+</div>
 </div>
