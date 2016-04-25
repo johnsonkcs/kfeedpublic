@@ -1,8 +1,9 @@
 class TransactionsController < ApplicationController
   def new
-  	gon.client_token = generate_client_token
   end
     def create
+      @card_info = params[:save_record]
+
     	@Feeding = Feeding.find(params[:feeding_id])
     	@result = Braintree::Transaction.sale(
               amount: @Feeding.price,
@@ -22,8 +23,17 @@ class TransactionsController < ApplicationController
   Braintree::ClientToken.generate
 end
 def payment_record
-	@payment = Payment.create(feeder_id: current_user.id, braintree_id: @result.transaction.id, status: @result.transaction.status, last_4: @result.transaction.credit_card_details.last_4)
+  if @card_info == "1"
+    # PaymentsController.create
+     @payment = Payment.create(feeder_id: params[:feeder_id], braintree_id: @result.transaction.id, status: @result.transaction.status, last_4: @result.transaction.credit_card_details.last_4)
+  else
+       @payment = Payment.create(feeder_id: params[:feeder_id], braintree_id: @result.transaction.id, status: @result.transaction.status)
+  end
 
+end
+
+def generate_client_token
+    Braintree::ClientToken.generate
 end
 
 end

@@ -11,6 +11,8 @@ class FeedersController < ApplicationController
   # GET /feeders/1.json
   def show
     @feeding = Feeding.find(params[:feeding_id])
+    gon.client_token = generate_client_token
+
   end
 
   # GET /feeders/new
@@ -75,5 +77,9 @@ class FeedersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def feeder_params
       params.require(:feeder).permit(:user_id, :feeding_id)
+    end
+
+    def generate_client_token
+      Braintree::ClientToken.generate
     end
 end
