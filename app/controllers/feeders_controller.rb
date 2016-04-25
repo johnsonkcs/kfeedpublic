@@ -10,32 +10,39 @@ class FeedersController < ApplicationController
   # GET /feeders/1
   # GET /feeders/1.json
   def show
+    @feeding = Feeding.find(params[:feeding_id])
+    gon.client_token = generate_client_token
+
   end
 
   # GET /feeders/new
-  # def new
-  #   @feeder = Feeder.new
-  # end
+  def new
+    @feeding = Feeding.find(params[:feeding_id])
+
+    @feeder = Feeder.new
+  end
 
   # # GET /feeders/1/edit
-  # def edit
-  # end
+  def edit
+  end
 
   # # POST /feeders
   # # POST /feeders.json
-  # def create
-  #   @feeder = Feeder.new(feeder_params)
+  def create
+    @feeding = Feeding.find(params[:feeding_id])
+    @feeder = @feeding.feeders.create(user_id: current_user.id)
+    redirect_to feeding_feeder_path(@feeding, @feeder)
 
-  #   respond_to do |format|
-  #     if @feeder.save
-  #       format.html { redirect_to @feeder, notice: 'Feeder was successfully created.' }
-  #       format.json { render :show, status: :created, location: @feeder }
-  #     else
-  #       format.html { render :new }
-  #       format.json { render json: @feeder.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
+    # respond_to do |format|
+    #   if @feeder.save
+    #     format.html { redirect_to @feeder, notice: 'Feeder was successfully created.' }
+    #     format.json { render :show, status: :created, location: @feeder }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @feeder.errors, status: :unprocessable_entity }
+    #   end
+    # end
+  end
 
   # PATCH/PUT /feeders/1
   # PATCH/PUT /feeders/1.json
@@ -70,5 +77,9 @@ class FeedersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def feeder_params
       params.require(:feeder).permit(:user_id, :feeding_id)
+    end
+
+    def generate_client_token
+      Braintree::ClientToken.generate
     end
 end
