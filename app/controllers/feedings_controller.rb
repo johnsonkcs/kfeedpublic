@@ -1,12 +1,15 @@
 class FeedingsController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   before_action :set_feeding, only: [:show, :edit, :update, :destroy]
 
   # GET /feedings
   # GET /feedings.json
   def index
-    return @feedings = Feeding.paginate(:page => params[:page], per_page: 5).where(user_id: params[:user_id]) if params[:user_id]
+    if params[:user_id]
+    @feedings = Feeding.paginate(:page => params[:page], per_page: 5).where(user_id: params[:user_id])
+    else
     @feedings = Feeding.all.paginate(:page => params[:page], per_page: 5).order(created_at: :desc)
+    end
     @hash = Gmaps4rails.build_markers(@feedings) do |feeding, marker|
       marker.lat feeding.latitude
       marker.lng feeding.longitude

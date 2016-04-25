@@ -49,7 +49,7 @@ handler.buildMap({ provider: {}, internal: {id: "map"}}, function(){
        <% if feeding.pax_limit.nil? || feeding.pax_limit == 0 %>
        <p><strong>Pax Limit:</strong> No Limit %></p>
        <% elsif feeding.feeders.count >= feeding.pax_limit %>
-       <p><strong>Pax Limit:</strong> Already Full %></p>
+       <p><strong>Pax Limit:</strong> Already Full </p>
        <% else %>
        <p><strong>Pax Limit:</strong> <%= feeding.pax_limit.to_s %></p>
        <% end %>
