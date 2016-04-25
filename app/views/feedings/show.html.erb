@@ -77,3 +77,5 @@ handler.buildMap({ provider: {}, internal: {id: "map"}}, function(){
 
 <%= link_to 'Edit', edit_feeding_path(@feeding) %> |
 <%= link_to 'Back', feedings_path %>
+ |
+<%= link_to 'Join', feeding_feeders_path(@feeding), method: :post, data:  {no_turbolink: true}%>

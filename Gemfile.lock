@@ -49,6 +49,8 @@ GEM
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    braintree (2.59.0)
+      builder (>= 2.0.0)
     builder (3.2.2)
     byebug (8.2.4)
     coffee-rails (4.1.1)
@@ -89,6 +91,11 @@ GEM
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     gmaps4rails (2.1.2)
+    gon (6.0.1)
+      actionpack (>= 3.0)
+      json
+      multi_json
+      request_store (>= 1.0)
     hashie (3.4.3)
     i18n (0.7.0)
     jbuilder (2.4.1)
@@ -161,6 +168,7 @@ GEM
     rake (11.1.2)
     rdoc (4.2.2)
       json (~> 1.4)
+    request_store (1.3.1)
     responders (2.1.2)
       railties (>= 4.2.0, < 5.1)
     sass (3.4.22)
@@ -188,8 +196,6 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
-    turbolinks (2.5.3)
-      coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.0.0)
@@ -206,6 +212,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  braintree
   byebug
   carrierwave!
   coffee-rails (~> 4.1.0)
@@ -215,6 +222,7 @@ DEPENDENCIES
   figaro
   geocoder
   gmaps4rails
+  gon
   jbuilder (~> 2.0)
   jquery-rails
   mini_magick
@@ -226,7 +234,6 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   searchkick
   spring
-  turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
 
