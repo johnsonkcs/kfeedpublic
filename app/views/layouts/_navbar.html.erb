@@ -10,7 +10,7 @@
       <a class="navbar-brand" href="/">KFeedApp</a>
     </div>
     <div class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "All Feedings", feedings_path %></li>
         <li><%= link_to "All Feeders", feeders_path %></li>
 
@@ -21,6 +21,7 @@
             <li><%= link_to "Profile Page", user_path(current_user.id) %></li>
             <li><%= link_to "My Feedings", user_feedings_path(current_user.id) %></li>
             <li><%= link_to "My Feeders", user_feeders_path(current_user.id) %></li>
+            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
             <li role="separator" class="divider"></li>
             <li class="dropdown-header">Unpaid Feedings</li>
             <li><a href="#">Insert Link</a></li>
