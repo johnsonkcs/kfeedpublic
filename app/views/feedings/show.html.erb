@@ -4,7 +4,7 @@
 
 <p id="notice"><%= notice %></p>
 
-<div style='width: 100%;'>
+<div style='width: 100%;margin-top: -1.55%;'>
   <div id="map" style='width: 100%; height: 400px;'></div>
 </div>
 
@@ -26,38 +26,43 @@ handler.buildMap({ provider: {}, internal: {id: "map"}}, function(){
 </div>
 
 <p>
-  <strong>User:</strong>
+  <strong>User: </strong>
   <%= @feeding.user_id %>
 </p>
 
 <p>
-  <strong>Date:</strong>
+  <strong>Date: </strong>
   <%= @feeding.date %>
 </p>
 
 <p>
-  <strong>Time:</strong>
+  <strong>Time: </strong>
   <%= @feeding.time %>
 </p>
 
 <p>
-  <strong>Place:</strong>
+  <strong>Place: </strong>
   <%= @feeding.place %>
 </p>
 
 <p>
-  <strong>Latitude:</strong>
-  <%= @feeding.latitude %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @feeding.longitude %>
+  <strong>Pax limit: </strong>
+  <% if @feeding.pax_limit.nil? || @feeding.pax_limit == 0 %>
+  No Limit
+  <% elsif @feeding.feeders.where(paystatus: :authorized).count >= @feeding.pax_limit %>
+  Sorry, Feeding Event Is Full
+  <% else %>
+  <%= @feeding.pax_limit.to_s %>
+  <% end %>
 </p>
 
 <p>
   <strong>Price:</strong>
-  <%= @feeding.price %>
+  <% if @feeding.price.nil? || @feeding.price == 0 %>
+  FREE! JUST JOIN! 
+  <% else %>
+  RM <%= @feeding.price %>
+  <% end %>
 </p>
 
 <p>
@@ -67,15 +72,24 @@ handler.buildMap({ provider: {}, internal: {id: "map"}}, function(){
   <% end %>
 </p>
 
-<p>
-  <strong>Pax limit:</strong>
-  <%= @feeding.pax_limit %>
-</p>
+
 
 
 <br>
 
 <%= link_to 'Edit', edit_feeding_path(@feeding) %> |
 <%= link_to 'Back', feedings_path %>
- |
-<%= link_to 'Join', feeding_feeders_path(@feeding), method: :post, data:  {no_turbolink: true}%>
+
+<% if @feeding.feeders.where(:user_id => current_user.id).blank? %>
+
+  <% if @feeding.pax_limit.nil? || @feeding.pax_limit == 0 %>
+  |
+  <%= link_to 'Join', feeding_feeders_path(@feeding), method: :post, data:  {no_turbolink: true}%>
+  <% elsif @feeding.feeders.where(paystatus: :authorized).count >= @feeding.pax_limit %>
+  Sorry, Feeding Event Is Full
+  <% else %>
+  |
+  <%= link_to 'Join', feeding_feeders_path(@feeding), method: :post, data:  {no_turbolink: true}%>
+  <% end %>
+
+<% end %>

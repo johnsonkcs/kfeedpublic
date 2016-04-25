@@ -5,11 +5,13 @@ class TransactionsController < ApplicationController
       @card_info = params[:save_record]
 
     	@feeding = Feeding.find(params[:feeding_id])
+      @feeder = Feeder.find(params[:feeder_id])
     	@result = Braintree::Transaction.sale(
               amount: @feeding.price,
               payment_method_nonce: params[:payment_method_nonce])
     if @result.success?
     	payment_record 
+      @feeder.update(paystatus: :authorized)
       redirect_to feeding_path(@feeding), notice: "Congraulations! Your transaction has been successfully processed!"
     else
       payment_record

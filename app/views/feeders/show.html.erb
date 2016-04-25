@@ -1,26 +1,68 @@
 <div class="container-fluid">
 <div class="row">
 <p id="notice"><%= notice %></p>
-<p>
-  <strong>User:</strong>
-  <%= @feeder.user_id %>
+
+
+
+<p class="lead">
+  <h3><%= link_to "#{@feeder.feeding.name}", feeding_path(@feeder.feeding.id) %></h3>
 </p>
 
-<p>
-  <strong>Feeding:</strong>
-  <%= @feeder.feeding_id %>
+<p class="lead">
+  <strong>Date:</strong>
+  <%= @feeder.feeding.date.to_s %>
 </p>
 
-<div class="form-container radius-box glassy-bg small-10 small-centered medium-8 large-6 columns">
-  <h2 class="mbs">New Transaction</h2>
-  <%= form_tag transactions_path(feeding_id: @feeder.feeding_id, feeder_id: params[:id]) do%>
+<p class="lead">
+  <strong>Time:</strong>
+  <%= @feeder.feeding.time %>
+</p>
+
+<p class="lead">
+  <strong>Place:</strong>
+  <%= @feeder.feeding.place %>
+</p>
+
+<p class="lead">
+  <strong>Posted By:</strong>
+  <% if @feeder.feeding.user.name.blank? %>
+  <%= @feeder.feeding.user.email %>
+  <% else %>
+  <%= @feeder.feeding.user.name %>
+  <% end %>
+</p>
+
+
+
+<% if @feeder.feeding.price.nil? || @feeder.feeding.price == 0 %>
+<p class="lead"><strong>Status: </strong><span class="label label-success"> JOINED </span></p>
+<% else %>
+    <p class="lead">
+    <strong>Status:</strong>
+
+    <% if @feeder.payments.where(status: :authorized).blank? %>
+    <span class="label label-warning"> NOT PAID </span></p> 
+    <p class="lead"><strong>Price: </strong><br><span class="label label-success"> RM <%= @feeder.feeding.price.to_s %> </span></p>
+
+
+    <div class="form-container radius-box glassy-bg small-10 small-centered medium-8 large-6 columns">
+    <h2 class="mbs">New Transaction</h2>
+    <%= form_tag transactions_path(feeding_id: @feeder.feeding_id, feeder_id: params[:id]) do %>
     <p>Please enter your payment details:</p>
     <div id="dropin"></div>
     <%= check_box_tag(:save_record) %>
-<%= label_tag(:save_record, "Save credit card info") %>
+    <%= label_tag(:save_record, "Save credit card info") %>
     <%=submit_tag "Pay #{@feeding.price}$", class: "button mt1" %>
-  <%end%>
-</div>
+    <% end %>
+    </div>
+
+    <% else %>
+    <span class="label label-success">JOINED &amp; PAID</span>
+    <%end%>
+<% end %>
+
+
+ 
 <br>
 <br>
 </div>
