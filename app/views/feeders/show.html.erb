@@ -12,9 +12,11 @@
 
 <div class="form-container radius-box glassy-bg small-10 small-centered medium-8 large-6 columns">
   <h2 class="mbs">New Transaction</h2>
-  <%= form_tag transactions_path do%>
+  <%= form_tag transactions_path(feeding_id: @feeder.feeding_id, feeder_id: params[:id]) do%>
     <p>Please enter your payment details:</p>
     <div id="dropin"></div>
+    <%= check_box_tag(:save_record) %>
+<%= label_tag(:save_record, "Save credit card info") %>
     <%=submit_tag "Pay #{@feeding.price}$", class: "button mt1" %>
   <%end%>
 </div>
