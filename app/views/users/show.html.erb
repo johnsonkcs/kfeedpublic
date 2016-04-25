@@ -1,10 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-Hello <%= @user.name %>,
-<%= image_tag @user.profile_pic %>
-
+	Hello <%= current_user.name %>, <br>
 <p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="img-thumbnail">
+	<%= image_tag current_user.profile_pic.url(:thumb) %>
+</div><br>
+
+<p>
+<%= image_tag @user.profile_pic.url(:thumb).to_s %>
+</p>
+<p>
+<%= image_tag @user.profile_pic.url(:small).to_s %>
+</p>
+<p>
+<%= image_tag @user.profile_pic.url(:mid).to_s %>
+</p>
+<p>
+<%= image_tag @user.profile_pic.url(:full).to_s %>
+</p>
+
+<%= link_to 'Create New Feeding', new_feeding_path %><br>
+<%= link_to 'Your Feedings', user_feedings_path(current_user.id) %> | <%= link_to 'All Feedings', feedings_path %><br>
+
+<%= link_to 'Edit', edit_user_registration_path %> |
+<%= link_to 'Back', root_path %>

@@ -17,18 +17,20 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
    <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
   <%= csrf_meta_tags %>
- 
 
 </head>
+
 <body>
-<%= link_to "Home", root_path%> |
-	<%if user_signed_in?%>
-		<%= link_to "Signout", destroy_user_session_path, method: :delete %>
-		<%= link_to "Create new feeding", new_feeding_path%>
-		<%else%>
-    <%= link_to "Signup", new_user_registration_path %> | <%= link_to "Login", new_user_session_path %>
-  <%end%>
-<%= yield %>
+
+	<%= render 'layouts/navbar' %>
+
+	<%= yield %>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <!-- JavaScript should be bottom of the page -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> 
+  <!-- Braintree payment system -->
+  <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
 
 <!-- BEGIN .footer -->
 <div class="footer">

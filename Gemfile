@@ -29,17 +29,13 @@ gem 'geocoder'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
-
 gem 'carrierwave',  github:'carrierwaveuploader/carrierwave'
 gem 'mini_magick'
 gem 'searchkick'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
-
-
 gem 'braintree'
 gem 'gon'
-
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
