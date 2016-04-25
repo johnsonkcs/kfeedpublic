@@ -1,0 +1,22 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-6">
+			<h1>Champion Feeders</h1>
+
+			<ol type="1">	
+				<%@feeder_ranking.each do |k,v|%>
+					<li><p style="word-spacing: 30px"><%=k%> <%=v%></p></li>
+				<%end%>
+			</ol>
+		</div>
+		<div class="col-sm-6">
+			<h1>Champion Feedings</h1>
+
+			<ol type="1">	
+				<%@feeding_ranking.each do |k,v|%>
+					<li><p style="word-spacing: 30px"><%=k%> <%=v%></p></li>
+				<%end%>
+			</ol>
+		</div>
+	</div>
+</div>

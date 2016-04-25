@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     resources :feeders
   end
 
+
+  get 'ranking' => 'static_pages#ranking'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
