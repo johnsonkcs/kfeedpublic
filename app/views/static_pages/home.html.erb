@@ -1,8 +1,1 @@
 <p id="notice"><%= notice %></p>
-
-<p> index page </p>
-
-<% if signed_in?%>
-	<p> Hello <%= current_user.name %> </p><br>
-	<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-<% end %>
