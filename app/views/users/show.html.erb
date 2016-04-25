@@ -8,6 +8,19 @@
 	<%= image_tag current_user.profile_pic.url(:thumb) %>
 </div><br>
 
+<p>
+<%= image_tag @user.profile_pic.url(:thumb).to_s %>
+</p>
+<p>
+<%= image_tag @user.profile_pic.url(:small).to_s %>
+</p>
+<p>
+<%= image_tag @user.profile_pic.url(:mid).to_s %>
+</p>
+<p>
+<%= image_tag @user.profile_pic.url(:full).to_s %>
+</p>
+
 <%= link_to 'Create New Feeding', new_feeding_path %><br>
 <%= link_to 'Your Feedings', user_feedings_path(current_user.id) %> | <%= link_to 'All Feedings', feedings_path %><br>
 

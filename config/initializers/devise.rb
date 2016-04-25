@@ -9,8 +9,10 @@ Devise.setup do |config|
   # config.secret_key = 'bd78e6450193d044143e768dad3abf8fd79835f4946791a67f8b1de1abb6ba9a85d0014457e3b369a9529a04eb47cde3a8f500277fcb30e1925f6e92994a88b0'
 
   # ==> Omniauth Facebook
-  config.omniauth :facebook, ENV['facebook_app_id'], ENV['facebook_app_secret']
-
+  config.omniauth :facebook, ENV['facebook_app_id'], ENV['facebook_app_secret'],
+             :info_fields => 'email,name,first_name,last_name,gender,friends,photos,birthday,age_range,work,website,relationship_status,location,education',
+             :scope => 'email', 
+             :image_size => 'large'
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
