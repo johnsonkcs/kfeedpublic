@@ -5,8 +5,8 @@ class FeedingsController < ApplicationController
   # GET /feedings
   # GET /feedings.json
   def index
-    return @feedings = Feeding.where(user_id: params[:user_id]) if params[:user_id]
-    @feedings = Feeding.all
+    return @feedings = Feeding.paginate(:page => params[:page], per_page: 5).where(user_id: params[:user_id]) if params[:user_id]
+    @feedings = Feeding.all.paginate(:page => params[:page], per_page: 5).order(created_at: :desc)
     @hash = Gmaps4rails.build_markers(@feedings) do |feeding, marker|
       marker.lat feeding.latitude
       marker.lng feeding.longitude
@@ -17,6 +17,12 @@ class FeedingsController < ApplicationController
   # GET /feedings/1
   # GET /feedings/1.json
   def show
+    @feeding_feeders = []
+    
+    @feeding.feeders.each do |feeder|
+    @feeding_feeders << feeder
+    end
+    
     @hash = Gmaps4rails.build_markers(@feeding) do |f, marker|
       marker.lat f.latitude
       marker.lng f.longitude

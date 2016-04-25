@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160422104057) do
+ActiveRecord::Schema.define(version: 20160425094928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(version: 20160422104057) do
   create_table "feeders", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "feeding_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "paystatus",  default: "unauthorized"
   end
 
   create_table "feedings", force: :cascade do |t|

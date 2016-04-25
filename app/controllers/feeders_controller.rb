@@ -4,7 +4,7 @@ class FeedersController < ApplicationController
   # GET /feeders
   # GET /feeders.json
   def index
-    @feeders = Feeder.where(user_id: params[:user_id]) 
+    @feeders = Feeder.paginate(:page => params[:page], per_page: 10).where(user_id: params[:user_id]).order(created_at: :desc)
   end
 
   # GET /feeders/1
@@ -31,6 +31,14 @@ class FeedersController < ApplicationController
   def create
     @feeding = Feeding.find(params[:feeding_id])
     @feeder = @feeding.feeders.create(user_id: current_user.id)
+
+    if @feeding.price.nil? || @feeding.price == 0
+      @feeder.update(paystatus: :authorized)
+    end
+
+
+
+
     redirect_to feeding_feeder_path(@feeding, @feeder)
 
     # respond_to do |format|

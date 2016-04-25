@@ -1,22 +1,71 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Feeders</h1>
+<%= will_paginate @feeders %>
 
 <table>
   <thead>
     <tr>
-      <th>User</th>
       <th>Feeding</th>
-      <th colspan="3"></th>
+      <th>Place</th>
+      <th>Time</th>
+      <th>Price</th>
+      <th>Posted By</th>
+      <th>Status</th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @feeders.each do |feeder| %>
       <tr>
-        <td><%= feeder.user_id %></td>
-        <td><%= feeder.feeding_id %></td>
-        <td><%= link_to 'Show', user_feeders_path(current_user.id) %></td>
+        <td><%= link_to "#{feeder.feeding.name}", feeding_path(feeder.feeding.id) %></td>
+        <td><%= feeder.feeding.place %></td>
+        <td><%= feeder.feeding.time %></td>
+        <td><%= feeder.feeding.price.to_s %></td>
+        <% if feeder.feeding.user.name.blank? %>
+        <td><%= feeder.feeding.user.email %></td>
+        <% else %>
+        <td><%= feeder.feeding.user.name %></td>
+        <% end %>
+
+ <% @feeder_feeding = Feeding.find(feeder.feeding.id) %>
+
+  <% if feeder.feeding.pax_limit.nil? %>
+
+        <% if feeder.feeding.price.nil? || feeder.feeding.price == 0 %>
+        <td class="lead" style="text-align: center"><span class="label label-success"> JOINED </span></td>
+        <% else %>
+
+        <% if feeder.payments.where(status: :authorized).blank? %>
+        <td style="text-align: center"><%= link_to '<button class="btn btn-danger" type="button">Pay Now</button>'.html_safe , feeding_feeders_path(feeder.feeding.id), method: :post, data:  {no_turbolink: true} %> </td>
+        <% else %>
+        <td class="lead" style="text-align: center"><span class="label label-success"> PAID </span></td>
+        <% end %>
+
+        <% end %> 
+
+
+  <% elsif @feeder_feeding.feeders.where(paystatus: :authorized).count >= feeder.feeding.pax_limit %>
+        <td class="lead" style="text-align: center"><span class="label label-danger"> FULL </span></td>
+  <% else %>
+
+         <% if feeder.feeding.price.nil? || feeder.feeding.price == 0 %>
+        <td class="lead" style="text-align: center"><span class="label label-success"> JOINED </span></td>
+        <% else %>
+
+        <% if feeder.payments.where(status: :authorized).blank? %>
+        <td style="text-align: center"><%= link_to '<button class="btn btn-danger" type="button">Pay Now</button>'.html_safe , feeding_feeders_path(feeder.feeding.id), method: :post, data:  {no_turbolink: true} %> </td>
+        <% else %>
+        <td class="lead" style="text-align: center"><span class="label label-success"> PAID </span></td>
+        <% end %>
+
+        <% end %> 
+   <% end %>
+
+
+
+
         <td><%= link_to 'Edit', edit_user_feeder_path(current_user.id, feeder.id) %></td>
         <td><%= link_to 'Destroy', user_feeder_path(current_user.id, feeder.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

@@ -4,7 +4,7 @@
 
 <p id="notice"><%= notice %></p>
 
-<div style='width: 100%;'>
+<div style='width: 100%;margin-top: -1.55%;'>
   <div id="map" style='width: 100%; height: 400px;'></div>
 </div>
 
@@ -24,6 +24,58 @@ handler.buildMap({ provider: {}, internal: {id: "map"}}, function(){
       <input type="search" placeholder="Search" name="q" >
       </form>
 </div>
+
+
+<div class="container">
+<h3 style="text-align: right"><%= link_to 'Create New Feeding', new_feeding_path, class:"btn btn-info pull-left" %><%= will_paginate @feedings %></h3>
+</div>
+<div class="container-fluid"><br><br></div>
+<div class="container">
+
+ <% @feedings.each do |feeding| %>
+   <div class="row"><!-- Full Row -->      
+     <div class="col-lg-5"><!-- Picture Box-->
+     <% if feeding.feeding_pics.blank? == true %>
+     <p>No Pics Available</p>
+     <% else %>
+       <%= image_tag feeding.feeding_pics.first.url(:mid).to_s, class: 'img-responsive' %>
+     <% end %>
+     </div><!-- End Picture Box -->
+     <div class="col-lg-5"><!-- Info Box -->
+       <h3><%= link_to "#{feeding.name}", feeding %></h3>
+       <p><strong>Date:</strong> <%= feeding.date.to_s %></p>
+       <p><strong>Time:</strong> <%= feeding.time %></p>
+       <p><strong>Place:</strong> <%= feeding.place %></p>
+       <% if feeding.pax_limit.nil? || feeding.pax_limit == 0 %>
+       <p><strong>Pax Limit:</strong> No Limit %></p>
+       <% elsif feeding.feeders.count >= feeding.pax_limit %>
+       <p><strong>Pax Limit:</strong> Already Full %></p>
+       <% else %>
+       <p><strong>Pax Limit:</strong> <%= feeding.pax_limit.to_s %></p>
+       <% end %>
+     </div><!-- End Info Box -->
+     <div class="col-lg-2"><!-- User Box -->
+       <p>Posted by:</p>
+       <p><%= image_tag feeding.user.profile_pic.url(:thumb).to_s, class:"img-circle" %> <%= link_to "#{feeding.user.name}", user_path(feeding.user.id) %></p>
+       <% if feeding.user == current_user %>
+         <p>
+           <%= link_to 'Edit', edit_feeding_path(feeding), class:"btn btn-warning" %>
+           <%= link_to 'Delete', feeding, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+         </p>
+       <% end %>   
+       <% if feeding.price.nil? || feeding.price == 0 %>
+       <p class="lead"><strong>Price: </strong><br><span class="label label-success"> FREE! JUST JOIN! </span></p>
+       <% else %>
+       <p class="lead"><strong>Price: </strong><br><span class="label label-success"> RM <%= feeding.price %> </span></p>
+       <% end %>      
+     </div><!-- End User Box -->
+     <hr>
+   </div><!-- End Full Row -->
+   <hr>
+ <% end %>
+<h3 style="text-align: right"><%= link_to 'Create New Feeding', new_feeding_path, class:"btn btn-info pull-left" %><%= will_paginate @feedings %></h3> <br>
+</div>
+<div class="container-fluid"><br><br></div>
 
 <h1>Listing Feedings</h1>
 
