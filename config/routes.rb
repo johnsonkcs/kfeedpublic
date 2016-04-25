@@ -1,24 +1,30 @@
 Rails.application.routes.draw do
-  get 'transactions/new'
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+  get 'transactions/new'
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks", registrations: 'registrations' }
+
   resources :payments
-  # resources :feeders
   resources :feedings do
     resources :feeders
   end
   resources :users
+
   resources :transactions, only: [:new, :create]
+
+  resources :users do 
+    resources :feedings
+  end
+
+  resources :users do 
+    resources :feeders
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'static_pages#home'
   get 'search', to: 'search#search'
-
-
-
-
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

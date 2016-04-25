@@ -3,8 +3,9 @@ GIT
   revision: c61a919f2c047295ea7327e8e91fa9f578156bec
   specs:
     carrierwave (0.11.0)
-      activemodel (>= 4.0.0)
-      activesupport (>= 4.0.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
       mime-types (>= 1.16)
 
 GEM

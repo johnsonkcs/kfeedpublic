@@ -1,6 +1,5 @@
 class Feeding < ActiveRecord::Base
 
-
 	belongs_to :user
 	has_many :payments, :dependent => :destroy
 	has_many :feeders, :dependent => :destroy
