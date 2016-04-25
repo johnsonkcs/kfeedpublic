@@ -5,6 +5,7 @@ class FeedingsController < ApplicationController
   # GET /feedings
   # GET /feedings.json
   def index
+    return @feedings = Feeding.where(user_id: params[:user_id]) if params[:user_id]
     @feedings = Feeding.all
     @hash = Gmaps4rails.build_markers(@feedings) do |feeding, marker|
       marker.lat feeding.latitude
