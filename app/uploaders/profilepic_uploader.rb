@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class ProfilePicUploader < CarrierWave::Uploader::Base
+class ProfilepicUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
@@ -33,7 +33,19 @@ class ProfilePicUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process :resize_to_fit => [200, 200]
+    process resize_to_fill: [50, 50]
+  end
+
+  version :small do
+    process resize_to_fill: [200, 200]
+  end
+
+  version :mid do
+    process resize_to_fill: [450, 450]
+  end
+
+  version :full do
+    process resize_to_fit: [1000, 1000]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
