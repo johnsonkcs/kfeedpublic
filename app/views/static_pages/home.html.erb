@@ -1,3 +1,10 @@
+<% unless notice.blank? %>
+<div class="alert alert-success" style="margin-top: -1.55%" role="alert">
+<p id="notice"><%= notice %></p>
+</div>
+<% end %>
+
+
  <div class="videoWrapper" style="margin-top: -2%">
         <iframe width="1280" height="720" src="https://www.youtube.com/embed/211bWklh5Fo?rel=0&amp;start=17&amp;controls=0&amp;showinfo=0&amp;autoplay=1&amp;end=107" frameborder="0" allowfullscreen></iframe>
         </div>
@@ -12,10 +19,4 @@
             </div>
           </div>
 
-
-<% unless notice.blank? %>
-<div class="alert alert-success" role="alert">
-<p id="notice"><%= notice %></p>
-</div>
-<% end %>
 

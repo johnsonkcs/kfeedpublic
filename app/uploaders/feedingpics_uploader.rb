@@ -24,11 +24,15 @@ class FeedingpicsUploader < CarrierWave::Uploader::Base
   end
 
   version :fb do
-    process :resize_to_fit => [687, 359]
+    process :resize_to_fill => [687, 359]
   end
 
   version :mid do
     process :resize_to_fill => [430, 280]
+  end
+
+  version :slide do
+    process resize_to_fill: [600, 400]
   end
   # Create different versions of your uploaded files:
   version :thumb do

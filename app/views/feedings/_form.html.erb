@@ -1,6 +1,6 @@
 <%= form_for(@feeding) do |f| %>
   <% if @feeding.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class= "alert alert-danger" style="margin-top: -1.55%">
       <h2><%= pluralize(@feeding.errors.count, "error") %> prohibited this feeding from being saved:</h2>
 
       <ul>

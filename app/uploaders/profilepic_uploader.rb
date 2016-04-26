@@ -49,8 +49,12 @@ class ProfilepicUploader < CarrierWave::Uploader::Base
     process resize_to_fill: [450, 450]
   end
 
+  version :slide do
+    process resize_to_fill: [600, 400]
+  end
+
   version :full do
-    process resize_to_fit: [1000, 1000]
+    process resize_to_fill: [1280, 720]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
