@@ -7,7 +7,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def after_sign_up_path_for(resource)
-  	'/users/edit'
+  	'static_pages#home'
   end
 
 end
