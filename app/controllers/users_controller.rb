@@ -11,6 +11,11 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    @feeding_count = @user.feedings.count
+    @feeder_count = @user.feeders.where(paystatus: :authorized).count
+    @failed_feeder = @user.feeders.where(paystatus: :unauthorized).count
+    @feedings = @user.feedings 
+    @feeders = @user.feeders
   end
 
   # # GET /users/new

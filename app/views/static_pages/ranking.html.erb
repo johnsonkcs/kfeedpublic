@@ -1,20 +1,23 @@
 <div class="container-fluid">
-	<div class="row">
+	<div class="row ranking">
 		<div class="col-sm-6">
-			<h1>Champion Feeders</h1>
-
-			<ol type="1">	
+			<h1 style="text-align:center;">Champion Feeders</h1>
+			
+			<ol type="1">
 				<%@feeder_ranking.each do |k,v|%>
-					<li><p style="word-spacing: 30px"><%=k%> <%=v%></p></li>
+					<p><div class="col-sm-8"><li>
+					<%=k%></div> 
+					<div class="col-sm-4 count" style="text-align:center;"><%=v%></div></li></p>
 				<%end%>
 			</ol>
 		</div>
 		<div class="col-sm-6">
-			<h1>Champion Feedings</h1>
+			<h1 style="text-align:center;">Champion Feedings</h1>
 
 			<ol type="1">	
 				<%@feeding_ranking.each do |k,v|%>
-					<li><p style="word-spacing: 30px"><%=k%> <%=v%></p></li>
+					<p><div class="col-sm-8"><li><%=k%></div>
+					<div class="col-sm-4 count" style="text-align:center;"><%=v%></div></li></p>
 				<%end%>
 			</ol>
 		</div>
