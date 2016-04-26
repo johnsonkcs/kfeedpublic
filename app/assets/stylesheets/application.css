@@ -10,6 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require jquery-ui
  *= require_tree .
  *= require_self
  */
@@ -30,9 +31,9 @@
 
 .videoWrapper {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
-  padding-top: 1px;
-  height: 0;
+  /*padding-bottom: 56.25%; /* 16:9 */
+  /*padding-top: 1px;*/
+  /*height: 0;*/
   /*background-color: rgba(61,98,107,0.5);*/
 /*background-image: url("http://www.transparenttextures.com/patterns/black-twill.png");*/
 
