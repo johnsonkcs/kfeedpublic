@@ -48,15 +48,16 @@
      </div><!-- End Picture Box -->
      <div class="col-lg-4"><!-- Info Box -->
        <h3><%= link_to "#{feeding.name}", feeding %></h3>
+       <br>
        <p><strong>Date:</strong> <%= feeding.date.to_s %></p>
        <p><strong>Time:</strong> <%= feeding.time %></p>
        <p><strong>Place:</strong> <%= feeding.place %></p>
        <% if feeding.pax_limit.nil? || feeding.pax_limit == 0 %>
-       <p><strong>Pax Limit:</strong> No Limit %></p>
+       <p><strong>Pax Limit:</strong> <span class="label label-info">No Limit</span></p>
        <% elsif feeding.feeders.count >= feeding.pax_limit %>
-       <p><strong>Pax Limit:</strong> Already Full </p>
+       <p><strong>Pax Limit:</strong> <span class="label label-danger">Already Full</span></p>
        <% else %>
-       <p><strong>Pax Limit:</strong> <%= feeding.pax_limit.to_s %></p>
+       <p><strong>Pax Limit:</strong> <span class="label label-info"> <%= feeding.pax_limit.to_s %> pax </span></p>
        <% end %>
      </div><!-- End Info Box -->
      <div class="col-lg-3"><!-- User Box -->
@@ -81,51 +82,3 @@
 <h3 style="text-align: right"><%= link_to 'Create New Feeding', new_feeding_path, class:"btn btn-info pull-left" %><%= will_paginate @feedings %></h3> <br>
 </div>
 <div class="container-fluid"><br><br></div>
-
-<h1>Listing Feedings</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>User</th>
-      <th>Date</th>
-      <th>Time</th>
-      <th>Place</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th>Price</th>
-      <th>Feeding pics</th>
-      <th>Pax limit</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @feedings.each do |feeding| %>
-      <tr>
-        <td><%= feeding.name %></td>
-        <td><%= feeding.user_id %></td>
-        <td><%= feeding.date %></td>
-        <td><%= feeding.time %></td>
-        <td><%= feeding.place %></td>
-        <td><%= feeding.latitude %></td>
-        <td><%= feeding.longitude %></td>
-        <td><%= feeding.price %></td>
-        <% if feeding.feeding_pics.blank? == true %>
-        <td> No Pics Available </td>
-        <% else %>
-        <td><%= image_tag feeding.feeding_pics.first.url(:thumb).to_s %></td>
-        <% end %>
-        <td><%= feeding.pax_limit %></td>
-        <td><%= link_to 'Show', feeding %></td>
-        <td><%= link_to 'Edit', edit_feeding_path(feeding) %></td>
-        <td><%= link_to 'Destroy', feeding, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Feeding', new_feeding_path %>
