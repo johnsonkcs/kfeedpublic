@@ -1,7 +1,7 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+@import url(https://fonts.googleapis.com/css?family=Oswald);
 
 .video-header {
 	padding: 0;
@@ -18,17 +18,96 @@
 .body-2 {
 	height: 450px;
 	background: #fff;
-    margin-top: -70px!important;
+    margin-top: -70px !important;
+    position: relative;
+    overflow-x: hidden;
+    .body-2-right {
+        
+        
+        position:absolute;
+        top:0; 
+        right:-30%; 
+        height: 450px;
+        width: 80%;
+        background-color: #75B9DC;
+        border-left: 1px dotted;
 
-    .body-2-left {
-        background: green;
-        height: 100%;
+        .body-2-right-1 {
+            padding: 140px 0 0 70px;
+            h2 {
+                font-size: 50px;
+                font-family: 'Oswald', sans-serif;    
+            }
+
+            #btn-right {
+                height: 50px;
+            }
+            
+        }
+
+        .body-2-right-2 {
+            padding: 100px 30px 0 140px ;
+            h2 {
+                font-size: 30px;
+                font-family: 'Oswald', sans-serif;    
+            }
+
+            .panel {
+                border: 1px dotted;
+                background: transparent;
+            }
+        }
+
+
+        
     }
 
-     .body-2-right {
-        background: blue;
-        height: 100%;
+    
+
+   
+
+     .body-2-left {
+        
+        position:absolute;
+        top:0; 
+        left:-30%; 
+        height: 450px;
+        width: 80%;
+        z-index: 2;
+        background-color: #75B9DC;
+        border-right: 1px dotted;
+
+        .body-2-left-1 {
+            padding: 100px 140px 0 30px;
+            h2 {
+                font-size: 30px;
+                font-family: 'Oswald', sans-serif;    
+            }
+
+            .panel {
+                border: 1px dotted;
+                background: transparent;
+            }
+        }
+
+        .body-2-left-2 {
+            padding: 140px 70px 0 0;
+
+            h2 {
+                font-size: 50px;   
+                font-family: 'Oswald', sans-serif; 
+            }
+
+             #btn-left {
+                height: 50px;
+            }
+            
+            
+        }
+       
     }
+
+     
 
 	
 }
@@ -37,7 +116,7 @@
 
 .body-3 {
 	height: 500px;
-	background: #000;
+	background: #fff;
 }
 
 
@@ -64,8 +143,8 @@
   -webkit-transition: opacity 0.5s ease-out; 
       -ms-transition: opacity 0.5s ease-out; 
 
-    -webkit-animation: moveSlideshow 40s linear infinite;
-    -moz-animation:    moveSlideshow 40s linear infinite;
+    -webkit-animation: moveSlideshow 20s linear infinite;
+    -moz-animation:    moveSlideshow 20s linear infinite;
     -webkit-transform: translate3d(0, 0, 0);
     
 }

@@ -20,8 +20,53 @@
 //= require gmaps/google
 
 
+
+
 $(document).ready(function () {
 
+   $("#btn-right").mouseover(function(){
+         $(".body-2-left").css("background-color", "white");
+          $(".body-2-right").animate({
+            
+            right: '0'
+        });
+         $(".body-2-right").css("z-index", "99");
+          $(".body-2-left").css("z-index", "1");
+     });
+
+   $(".body-2-right").mouseleave(function(){
+
+      $(".body-2-left").css("background-color", "#75B9DC");
+         $(".body-2-right").animate({
+            
+            right: '-30%'
+        });
+         $(".body-2-right").css("z-index", "99");
+         $(".body-2-left").css("z-index", "1");
+         
+     });
+
+   $("#btn-left").mouseenter(function(){
+         $(".body-2-right").css("background-color", "white");
+          $(".body-2-left").animate({
+            left: '0'
+        });
+         $(".body-2-left").css("z-index", "99");
+         $(".body-2-right").css("z-index", "1");
+     });
+   $(".body-2-left").mouseleave(function(){
+
+
+        $(".body-2-right").css("background-color", "#75B9DC");
+         $(".body-2-left").animate({
+            
+            left: '-30%'
+        });
+         $(".body-2-left").css("z-index", "99");
+          $(".body-2-right").css("z-index", "1");
+     
+        
+     });
 	
 
 });
