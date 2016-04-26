@@ -1,21 +1,60 @@
- <div class="videoWrapper" style="margin-top: -2%">
-        <iframe width="1280" height="720" src="https://www.youtube.com/embed/211bWklh5Fo?rel=0&amp;start=17&amp;controls=0&amp;showinfo=0&amp;autoplay=1&amp;end=107" frameborder="0" allowfullscreen></iframe>
-        </div>
-      
-          <div class="container">
-            <div class="carousel-caption">
-              <h1 id="cap-text">Join A Feeding Near You Today!</h1>
-              <form class="form-wrapper cf" action="/search/?q=" method="get">
-              <input id="johnson-input" type="text" placeholder="Which City Are You From?" name="q">
-              <button id="johnson-btn" type="submit">Search</button>
-              </form>
+<div id="slide-1" class="container-fluid video-header">
+
+   <div class="row body-1" data-parallax='{"y" : 360}' >
+
+         
+     
+      <div class="videoWrapper" style="margin-top: -2%" >
+          <!-- <div id="player"></div> -->
+          
+        <div id="tech-slideshow">
+            <div id="tech-slideshow-2"></div>
+            <div id="tech-slideshow-1"></div>
+         </div>
+            <div class="container">
+              <div class="carousel-caption">
+                  <h1 id="cap-text">Join A Feeding Near You Today!</h1>
+                  <form class="form-wrapper cf" action="/search/?q=" method="get">
+                  <input id="johnson-input" type="text" placeholder="Which City Are You From?" name="q">
+                  <button id="johnson-btn" type="submit">Search</button>
+                  </form>
+              </div>
             </div>
-          </div>
+
+            <p id="notice"><%= notice %></p>
 
 
-<% unless notice.blank? %>
-<div class="alert alert-success" role="alert">
-<p id="notice"><%= notice %></p>
-</div>
-<% end %>
 
+
+
+
+
+
+      </div>
+   </div>
+
+  
+  
+      <div class="row body-2 text-center">
+        <div class="col-md-12 inner-2">
+         <h1>BODY 2</h1> 
+
+        </div>
+         
+       </div>
+    
+  
+
+    
+      <div class="row body-3"></div>
+      <div class="row body-4"></div>
+ </div> 
+
+
+
+
+ 
+
+
+
+        
