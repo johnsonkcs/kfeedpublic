@@ -20,7 +20,11 @@ class FeedingpicsUploader < CarrierWave::Uploader::Base
   end
   
   version :full do
-    process :resize_to_fit => [1280, 1000]
+    process :resize_to_fill => [1280, 720]
+  end
+
+  version :fb do
+    process :resize_to_fit => [687, 359]
   end
 
   version :mid do

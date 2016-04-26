@@ -1,7 +1,6 @@
 class Feeding < ActiveRecord::Base
 
 	belongs_to :user
-	has_many :payments, :dependent => :destroy
 	has_many :feeders, :dependent => :destroy
 	validates_presence_of :date, :time, :place, :feeding_pics, :name
 	mount_uploaders :feeding_pics, FeedingpicsUploader

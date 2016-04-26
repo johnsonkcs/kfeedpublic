@@ -1,8 +1,7 @@
 class User < ActiveRecord::Base
 
-
+  has_many :payments, through: :feeders, :dependent => :destroy
   has_many :feedings, :dependent => :destroy
-  has_many :payments, :dependent => :destroy
   has_many :feeders, :dependent => :destroy
 
   # Include default devise modules. Others available are:
