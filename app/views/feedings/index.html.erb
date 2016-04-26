@@ -16,7 +16,7 @@
 <script type="text/javascript">
   
   handler = Gmaps.build('Google');
-handler.buildMap({ provider: {}, internal: {id: "map"}}, function(){
+  handler.buildMap({ provider: {}, internal: {id: "map"}}, function(){
   markers = handler.addMarkers(<%=raw @hash.to_json %>);
   handler.bounds.extendWith(markers);
   handler.fitMapToBounds();
@@ -46,7 +46,7 @@ handler.buildMap({ provider: {}, internal: {id: "map"}}, function(){
        <%= image_tag feeding.feeding_pics.first.url(:mid).to_s, class: 'img-responsive' %>
      <% end %>
      </div><!-- End Picture Box -->
-     <div class="col-lg-5"><!-- Info Box -->
+     <div class="col-lg-4"><!-- Info Box -->
        <h3><%= link_to "#{feeding.name}", feeding %></h3>
        <p><strong>Date:</strong> <%= feeding.date.to_s %></p>
        <p><strong>Time:</strong> <%= feeding.time %></p>
@@ -59,7 +59,7 @@ handler.buildMap({ provider: {}, internal: {id: "map"}}, function(){
        <p><strong>Pax Limit:</strong> <%= feeding.pax_limit.to_s %></p>
        <% end %>
      </div><!-- End Info Box -->
-     <div class="col-lg-2"><!-- User Box -->
+     <div class="col-lg-3"><!-- User Box -->
        <p>Posted by:</p>
        <p><%= image_tag feeding.user.profile_pic.url(:thumb).to_s, class:"img-circle" %> <%= link_to "#{feeding.user.name}", user_path(feeding.user.id) %></p>
        <% if feeding.user == current_user %>
