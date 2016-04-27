@@ -3,12 +3,12 @@
 
   <div class="field">
     <%= f.label :name , class:"h4" %><br />
-    <%= f.text_field :name, autofocus: true %>
+    <%= f.text_field :name, autofocus: true, class: "form-control fat" %>
   </div>
 
   <div class="field">
     <%= f.label :email, class:"h4" %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, autofocus: true, class: "form-control fat" %>
   </div>
 
   <div class="field">
@@ -16,17 +16,17 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", class: "form-control fat" %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation, class:"h4" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control fat" %>
   </div>
 
   <div class="submit-field">
-    <%= f.submit "Sign up", class:"btn btn-lg btn-success", id: "signsignbtn" %>
-    <a href="/users/auth/facebook" class="btn btn-lg btn-primary" id="signsignbtn">
+    <%= f.submit "Sign Up", class:"btn btn-lg btn-success", id: "signsignbtn" %>
+    <a href="/users/auth/facebook" class="btn btn-lg btn-primary" id="signfacebook">
     <i class="fa fa-facebook"></i> Sign Up with Facebook </a>
   </div>
 <% end %>

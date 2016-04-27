@@ -1,8 +1,14 @@
+<% unless notice.blank? %>
+<div class="alert alert-success" style="margin-top: -1.55%" role="alert">
+<p id="notice"><%= notice %></p>
+</div>
+<% end %>
+
 <div class="container">
   <div class="jumbotron">
     <div class="jumbotron-user-page">
-      <h1> Sign Up </h1>
-      <p class="lead">Sign Up with us today blablabla</p>
+      <h1> Sign up </h1>
+      <p class="lead">..to start feeding!</p>
 
       <%= render partial: 'form' %>
 

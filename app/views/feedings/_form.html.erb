@@ -11,56 +11,48 @@
     </div>
   <% end %>
 
-
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, placeholder: "Event Name" %>
+    <%= f.label :name, class: "h4" %><br>
+    <%= f.text_field :name, placeholder: "Event Name", class: "form-control fat" %>
   </div>
-
   <div class="field">
-    <%= f.label :date %><br>
+    <%= f.label :date, class: "h4" %><br>
     <%= f.date_select :date %>
   </div>
   <div class="field">
-    <%= f.label :time %><br>
-    <%= f.text_field :time, placeholder: "Enter A Duration" %>
+    <%= f.label :time, class: "h4" %><br>
+    <%= f.text_field :time, placeholder: "Enter A Duration", class: "form-control fat" %>
   </div>
   <div class="field">
-    <%= f.label :place %><br>
-    <%= f.text_area :place, placeholder: "Address of Meeting Point" %>
+    <%= f.label :place, class: "h4" %><br>
+    <%= f.text_area :place, placeholder: "Address of Meeting Point", class: "form-control fat" %>
   </div>
-
   <div class="field">
-  
     <%= f.hidden_field :latitude %>
   </div>
   <div class="field">
-
     <%= f.hidden_field :longitude %>
   </div>
   <div class="field">
-  
     <%= f.hidden_field :latitude %>
   </div>
   <div class="field">
-
     <%= f.hidden_field :longitude %>
   </div>
   <div class="field">
-    <%= f.label :price %><br>
-    <%= f.number_field :price, placeholder: "Leave Blank If Free" %>
-
+    <%= f.label :price, class: "h4" %><br>
+    <%= f.number_field :price, placeholder: "Leave Blank If Free", class: "form-control fat" %>
   </div>
   <div class="field">
-    <%= f.label :feeding_pics %><br>
+    <%= f.label :feeding_pics, class: "h4" %><br>
     <%= f.file_field :feeding_pics, multiple: true %>
   </div>
 
   <div class="field">
-    <%= f.label :pax_limit %><br>
-    <%= f.number_field :pax_limit, placeholder: "Leave Blank If Unlimited" %>
+    <%= f.label :pax_limit, class: "h4" %><br>
+    <%= f.number_field :pax_limit, placeholder: "Leave Blank If Unlimited", class: "form-control fat" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Update Feeding", class: "btn btn-warning", style: "margin-top: 11px" %>
   </div>
 <% end %>
