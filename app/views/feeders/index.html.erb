@@ -1,84 +1,162 @@
 
 <% unless notice.blank? %>
-<div class="alert alert-success" role="alert">
+<div class="alert alert-success" style="margin-top: -1.55%" role="alert">
 <p id="notice"><%= notice %></p>
 </div>
 <% end %>
 
-<h1>Listing Feeders</h1>
-<%= will_paginate @feeders %>
+<div class="page-header text-center">
+  <h1> Feeding Events You've Joined <small></small></h1>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Feeding</th>
-      <th>Place</th>
-      <th>Time</th>
-      <th>Price</th>
-      <th>Posted By</th>
-      <th>Status</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @feeders.each do |feeder| %>
-      <tr>
-        <td><%= link_to "#{feeder.feeding.name}", feeding_path(feeder.feeding.id) %></td>
-        <td><%= feeder.feeding.place %></td>
-        <td><%= feeder.feeding.time %></td>
-        <td><%= feeder.feeding.price.to_s %></td>
-        <% if feeder.feeding.user.name.blank? %>
-        <td><%= feeder.feeding.user.email %></td>
-        <% else %>
-        <td><%= feeder.feeding.user.name %></td>
-        <% end %>
+<div class="container-fluid">
+<div class="row">
+ <% @feeders.each do |feeder| %>
 
- <% @feeder_feeding = Feeding.find(feeder.feeding.id) %>
+ <div class="col-sm-4 col-md-3">
 
+        <div class="card-container">
+         <div class="card">
+             <div class="front">
+                 <div class="cover">
+                    <%= image_tag feeder.feeding.feeding_pics.last.url(:mid).to_s %>
+                 </div>
+                 <div class="user">
+                     <%= image_tag feeder.user.profile_pic.url(:small).to_s, class: "img-circle" %>
+                 </div>
+                 <div class="content">
+                     <div class="main">
+                         <h3 class="name"><%= link_to "#{feeder.feeding.name}", feeding_path(feeder.feeding.id) %></h3>
+                         <% if feeder.feeding.user.name.blank? %>
+                         <p class="profession"> By <%= feeder.feeding.user.email %> </p>
+                         <% else %>
+                         <p class="profession"> By <%= feeder.feeding.user.name %> </p>
+                         <% end %>
+                      
+                         <% @feeder_feeding = Feeding.find(feeder.feeding.id) %>
   <% if feeder.feeding.pax_limit.nil? %>
 
         <% if feeder.feeding.price.nil? || feeder.feeding.price == 0 %>
-        <td class="lead" style="text-align: center"><span class="label label-success"> JOINED </span></td>
+        <p class="text-center lead"><span class="label label-success"> JOINED </span></p>
         <% else %>
-
-        <% if feeder.payments.where(status: :authorized).blank? %>
-        <td style="text-align: center"><%= link_to '<button class="btn btn-danger" type="button">Pay Now</button>'.html_safe , feeding_feeders_path(feeder.feeding.id), method: :post, data:  {no_turbolink: true} %> </td>
-        <% else %>
-        <td class="lead" style="text-align: center"><span class="label label-success"> PAID </span></td>
-        <% end %>
-
+            <% if feeder.payments.where(status: :authorized).blank? %>
+            <p class="text-center"><%= link_to '<button class="btn btn-danger" type="button">Pay Now</button>'.html_safe , feeding_feeders_path(feeder.feeding.id), method: :post, data:  {no_turbolink: true} %> </p>
+            <% else %>
+            <p class="text-center lead"><span class="label label-success"> PAID </span></p>
+            <% end %>
         <% end %> 
-
 
   <% elsif @feeder_feeding.feeders.where(paystatus: :authorized).count >= feeder.feeding.pax_limit %>
-        <td class="lead" style="text-align: center"><span class="label label-danger"> FULL </span></td>
+        <p class="text-center lead"><span class="label label-danger"> FULL </span></p>
   <% else %>
 
-         <% if feeder.feeding.price.nil? || feeder.feeding.price == 0 %>
-        <td class="lead" style="text-align: center"><span class="label label-success"> JOINED </span></td>
+        <% if feeder.feeding.price.nil? || feeder.feeding.price == 0 %>
+        <p class="text-center lead"><span class="label label-success"> JOINED </span></p>
         <% else %>
-
-        <% if feeder.payments.where(status: :authorized).blank? %>
-        <td style="text-align: center"><%= link_to '<button class="btn btn-danger" type="button">Pay Now</button>'.html_safe , feeding_feeders_path(feeder.feeding.id), method: :post, data:  {no_turbolink: true} %> </td>
-        <% else %>
-        <td class="lead" style="text-align: center"><span class="label label-success"> PAID </span></td>
-        <% end %>
-
+            <% if feeder.payments.where(status: :authorized).blank? %>
+            <p class="text-center"><%= link_to '<button class="btn btn-danger" type="button">Pay Now</button>'.html_safe , feeding_feeders_path(feeder.feeding.id), method: :post, data:  {no_turbolink: true} %> </p>
+            <% else %>
+            <p class="text-center lead"><span class="label label-success"> PAID </span></p>
+            <% end %>
         <% end %> 
-   <% end %>
+        
+  <% end %>
 
+                         <p class="text-center"><%= feeder.feeding.place %></p>
+                     </div>
+                     <div class="footer">
+                         <div class="rating" style="padding-bottom: 10px">
+                             <%= @notes.sample %>
+                         </div>
+                     </div>
+                 </div>
+             </div> <!-- end front panel -->
+             <div class="back">
+                 <div class="header">
+                     <h5 class="motto"><%= @quotes.sample %></h5>
+                 </div>
+                 <div class="content">
+                     <div class="main">
+                         <h4 class="text-center"><%= link_to "Event Details", feeding_path(feeder.feeding.id) %></h4>
+                          <p class="text-center"><%= feeder.feeding.place %></p>
+                          <p class="text-center"><strong>Time: </strong> <%= feeder.feeding.time %> </p>
 
+     <% if feeder.feeding.pax_limit.nil? %>
 
+        <% if feeder.feeding.price.nil? || feeder.feeding.price == 0 %>
+        <p class="text-center lead"><span class="label label-warning"> FREE </span></p>
+        <% else %>
+            <% if feeder.payments.where(status: :authorized).blank? %>
+            <p class="text-center"><%= link_to '<button class="btn btn-sm btn-danger" type="button">Pay Now</button>'.html_safe , feeding_feeders_path(feeder.feeding.id), method: :post, data:  {no_turbolink: true} %> </p>
+            <% else %>
+            <p class="text-center lead"><span class="label label-primary"><strong>Price: </strong> RM <%= feeder.feeding.price.to_s %> </span></p>
+            <% end %>
+        <% end %> 
 
-        <td><%= link_to 'Edit', edit_user_feeder_path(current_user.id, feeder.id) %></td>
-        <td><%= link_to 'Destroy', user_feeder_path(current_user.id, feeder.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <% elsif @feeder_feeding.feeders.where(paystatus: :authorized).count >= feeder.feeding.pax_limit %>
+        <p class="text-center lead"><span class="label label-primary"><strong>Price: </strong> RM <%= feeder.feeding.price.to_s %> </span></p>
+  <% else %>
 
+        <% if feeder.feeding.price.nil? || feeder.feeding.price == 0 %>
+        <p class="text-center lead"><span class="label label-primary"><strong>Price: </strong> RM <%= feeder.feeding.price.to_s %> </span></p>
+        <% else %>
+            <% if feeder.payments.where(status: :authorized).blank? %>
+            <p class="text-center"><%= link_to '<button class="btn btn-sm btn-danger" type="button">Pay Now</button>'.html_safe , feeding_feeders_path(feeder.feeding.id), method: :post, data:  {no_turbolink: true} %> </p>
+            <% else %>
+            <p class="text-center lead"><span class="label label-primary"><strong>Price: </strong> RM <%= feeder.feeding.price.to_s %> </span></p>
+            <% end %>
+        <% end %> 
+        
+  <% end %>
+                
+
+                         <div class="stats-container">
+                             <div class="stats">
+                                 <h4><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></h4>
+                                 <p>
+                                     Thank
+                                 </p>
+                             </div>
+                             <div class="stats">
+                             <p><%= link_to 'Delete', user_feeder_path(current_user.id, feeder.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-info", style: "margin-top:25%" %></p>
+                             </div>
+                             <div class="stats">
+                                 <h4><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></h4>
+                                 <p>
+                                     You
+                                 </p>
+                             </div>
+                         </div>
+
+                     </div>
+                 </div>
+                 <div class="footer">
+                     <div class="social-links text-center">
+                         <a href="http://creative-tim.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+                         <a href="http://creative-tim.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+                         <a href="http://creative-tim.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+                     </div>
+                 </div>
+             </div> <!-- end back panel -->
+         </div> <!-- end card -->
+     </div> <!-- end card-container -->
+     </div>
+<% end %>
+</div>
+</div>
 <br>
+<div class="container text-center">
+<%= will_paginate @feeders %>
+</div>
 
-<%= link_to 'Back', root_path %>
+<br>    
+<br>
+<br>
+<div class="container text-center">
+<%= link_to 'Go Back To Home', root_path, class: "btn btn-lg btn-info" %>
+</div>
+<br>
+<br>
+<br>
 

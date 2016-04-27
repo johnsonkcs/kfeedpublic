@@ -1,4 +1,8 @@
+<% unless notice.blank? %>
+<div class="alert alert-success" style="margin-top: -1.55%" role="alert">
 <p id="notice"><%= notice %></p>
+</div>
+<% end %>
 
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
