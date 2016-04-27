@@ -17,9 +17,9 @@ class StaticPagesController < ApplicationController
 		end
 
 		@feeder_ranking = feeder_record.sort_by {|k,v| -v}.first 10
-		# @feeder_first = @feeder_ranking.first
+		@feeder_first = @feeder_ranking.first
 		@feeding_ranking = feeding_record.sort_by {|k,v| -v}.first 10
-		# @feeding_first =@feeding_ranking.first
+		@feeding_first =@feeding_ranking.first
 
 	end 
 	

@@ -1,25 +1,46 @@
+
+
 <div class="container-fluid">
 	<div class="row ranking">
+	
 		<div class="col-sm-6">
-			<h1 style="text-align:center;">Champion Feeders</h1>
+			<h1 style="text-align:center;">Champion Feeder</h1>
 			
 			<ol type="1">
 				<%@feeder_ranking.each do |k,v|%>
-					<p><div class="col-sm-8"><li>
-					<%=k%></div> 
-					<div class="col-sm-4 count" style="text-align:center;"><%=v%></div></li></p>
+					<%if @feeder_first==[k,v]%>
+						<h3><div class="col-sm-8"><li>
+						<%=k%><img src="https://cdn4.iconfinder.com/data/icons/flaten/512/medal-512.png" alt="Champion Icon" style="width:30px;height:30px;"></div> 
+						<div class="col-sm-4 count" style="text-align:center;"><%=v%></div></li></h3>
+					<%else%>
+						<p><div class="col-sm-8"><li>
+						<%=k%></div> 
+						<div class="col-sm-4 count" style="text-align:center;"><%=v%></div></li></p>
+						<%end%>
 				<%end%>
 			</ol>
 		</div>
 		<div class="col-sm-6">
-			<h1 style="text-align:center;">Champion Feedings</h1>
+			<h1 style="text-align:center;">Champion Organizer</h1>
 
 			<ol type="1">	
 				<%@feeding_ranking.each do |k,v|%>
+				<%if @feeding_first==[k,v]%>
+					<h3><div class="col-sm-8"><li><%=k%><img src="https://cdn4.iconfinder.com/data/icons/flaten/512/medal-512.png" alt="Champion Icon" style="width:30px;height:30px;"></div>
+					<div class="col-sm-4 count" style="text-align:center;"><%=v%></div></li></h3>
+				<%else%>
 					<p><div class="col-sm-8"><li><%=k%></div>
 					<div class="col-sm-4 count" style="text-align:center;"><%=v%></div></li></p>
+					<%end%>
 				<%end%>
 			</ol>
+		
 		</div>
+
+	</div>
+	<div class="message">
+		<h3 align="center"><i>Feel leftout? Want to be a champion? Just Feed!</i></h3>
 	</div>
 </div>
+
+
