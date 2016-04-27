@@ -41,7 +41,7 @@ gem 'gon'
 gem 'will_paginate', '~> 3.0.5'
 gem 'jquery-ui-rails'
 gem 'fog'
-gem 'sidekiq'
+
 gem "rack-timeout"
 
 # Use ActiveModel has_secure_password
