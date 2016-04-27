@@ -20,12 +20,12 @@
 
   <div class="submit-field">
     <%= f.submit "Sign In", class:"btn btn-lg btn-success", id: "signsignbtn", style: "margin-bottom: 10px" %>
-    <a href="/users/auth/facebook" class="btn btn-lg btn-primary" id="signsignbtn" style="margin-bottom: 10px">
+    <a href="/users/auth/facebook" class="btn btn-lg btn-primary" id="signfacebook" style="margin-bottom: 10px">
     <i class="fa fa-facebook"></i> Sign In with Facebook </a>
   </div>
 
   <div class="other-links" style="float: right;">
     <%= link_to "Forgot Password", new_user_password_path, class: "btn btn-lg btn-warning", id: "signsignbtn" %>
     <%= link_to "New User?", new_user_registration_path, class: "btn btn-lg btn-success", id: "signsignbtn" %>
-  </div>
+  </div><br>
 <% end %>
