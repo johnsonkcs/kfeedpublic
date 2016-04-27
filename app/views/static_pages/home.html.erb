@@ -1,5 +1,5 @@
 <% unless notice.blank? %>
-<div class="alert alert-success" style="margin-top: -1.55%;z-index: 25" role="alert">
+<div class="alert alert-success" style="z-index: 25; position: relative" role="alert" >
 <p id="notice"><%= notice %></p>
 </div>
 <% end %>
@@ -203,7 +203,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                   <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/qWZH0NcpN68"></iframe>
+                    <div id="player"></div>
                   </div>
                 </div>
                 
