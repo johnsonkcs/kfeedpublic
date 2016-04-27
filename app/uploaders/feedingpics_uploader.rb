@@ -5,8 +5,10 @@ class FeedingpicsUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
-  # storage :fog
+
+  # storage :file
+  storage :fog
+
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -25,6 +27,7 @@ class FeedingpicsUploader < CarrierWave::Uploader::Base
 
   version :fb do
     process :resize_to_fill => [687, 359]
+
   end
 
   version :mid do
@@ -34,6 +37,7 @@ class FeedingpicsUploader < CarrierWave::Uploader::Base
   version :slide do
     process resize_to_fill: [600, 400]
   end
+
   # Create different versions of your uploaded files:
   version :thumb do
     process :resize_to_fill => [50, 50]
