@@ -1,3 +1,135 @@
 // Place all the styles related to the User controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body
+{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.fb-profile img.fb-image-lg {
+    z-index: 0;
+    width: 100%; 
+    margin-top: -20px;
+    margin-bottom: 10px;
+}
+
+.fb-image-profile {
+    margin: -150px 10px 0px 50px;
+    z-index: 9;
+    width: 15%; 
+}
+
+div {
+    font-size: 14px;
+    p {
+        color: black;
+    }
+}
+
+/* IPAD SIZE*/
+@media (max-width:768px) 
+{  
+.fb-profile-text{
+h1{
+    position: relative;
+    left: 0%;
+    font-weight: 700;
+    font-size: 40px;
+}
+}
+
+.fb-image-profile
+{
+    z-index: 9;
+    position: relative;
+    top: 20px;
+    left: 1%;
+    width: 180px;
+}
+
+.fb-user {
+    min-width: 100%;
+    padding-bottom: 50px;
+}
+}
+
+/* IPHONE 6 PLUS */
+@media (max-width:440px) 
+{  
+.fb-profile-text{
+h1{
+    position: relative;
+    left: -29%;
+    font-weight: 700;
+    font-size: 28px;
+}
+} 
+
+.fb-image-profile
+{
+    z-index: 9;
+    position: relative;
+    top: -100px;
+    left: 17%;
+    width: 180px;
+
+}
+}
+
+/* IPHONE 6 & GALAXY S5 */
+@media (max-width: 380px) 
+{  
+.fb-profile-text{
+h1{
+    position: relative;
+    left: -30%;
+    font-weight: 0;
+    font-size: 23px;
+}
+} 
+
+.fb-image-profile
+{
+    z-index: 9;
+    position: relative;
+    top: -100px;
+    left: 15%;
+    width: 175px;
+
+}
+}
+
+/* IPHONE 5 */
+@media (max-width: 330px) 
+{  
+.fb-profile-text{
+h1{
+    position: relative;
+    left: 32%;
+    font-weight: 700;
+    font-size: 18px;
+}
+} 
+
+.fb-image-profile
+{
+    z-index: 9;
+    position: relative;
+    top: -100px;
+    left: 12%;
+    width: 150px;
+
+}
+}
+
+
+.jumbotron-user-page {
+    margin-bottom: 10px;
+} 

@@ -1,40 +1,44 @@
-
 <% unless notice.blank? %>
 <div class="alert alert-success" style="margin-top: -1.55%" role="alert">
 <p id="notice"><%= notice %></p>
 </div>
 <% end %>
 
-<% if @user.name.blank? == false %>
-<p>
-	Hello <%= @user.name %>, <br>
-<p>
-<% end %>
-
 <% if @user.profile_pic.blank? %>
-<p>User has no profile picture yet</p>
+<p><div class="lead" style="text-align: center;">User has no profile picture yet</div></p>
 <% else %>
 
-<div class="img-thumbnail">
-	<%= image_tag @user.profile_pic.url(:thumb) %>
-</div><br>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
-<p>
-<%= image_tag @user.profile_pic.url(:thumb).to_s %>
-</p>
-<p>
-<%= image_tag @user.profile_pic.url(:small).to_s %>
-</p>
-<p>
-<%= image_tag @user.profile_pic.url(:mid).to_s %>
-</p>
-<p>
-<%= image_tag @user.profile_pic.url(:full).to_s %>
-</p>
+<div class="fb-user">
+  <div class="fb-profile">
+    <img align="left" class="fb-image-lg" src="http://www.thenasilemakproject.com/wp-content/uploads/2015/09/Unknown2.jpeg" alt="Profile image example" style="height:300px; width: 100%"/>
+    		<%= image_tag @user.profile_pic.url(:mid).to_s, class:"fb-image-profile thumbnail", align: "left"%>
+      <div class="fb-profile-text">
+        <h1><strong><%= @user.name %></strong></h1>
+      </div>
+  </div>
+</div>
+
+<% end %> <!-- end user profile pic blank -->
+
+<div class="blankspace" style="min-height: 100px;">
+<!-- LENA'S PART -->
+</div>
+
+<div class="container text-center">
+  <div class="jumbotron" style="display:outline-block">
+      <h2> Explore Our Site </h2><br>
+
+<% if current_user.id == @user.id %>
+<%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-warning", style: "margin-bottom: 10px" %> |
 <% end %>
+<%= link_to 'Create New Feeding', new_feeding_path, class: "btn btn-success", style: "margin-bottom: 10px" %>
+|
+<%= link_to 'Your Feedings', user_feedings_path(current_user.id), class: "btn btn-danger", style: "margin-bottom: 10px" %>
+|
+<%= link_to 'All Feedings', feedings_path, class: "btn btn-info", style: "margin-bottom: 10px" %><br><br>
+<%= link_to 'Back', root_path, class: "btn btn-primary" %><br>
 
-<%= link_to 'Create New Feeding', new_feeding_path %><br>
-<%= link_to 'Your Feedings', user_feedings_path(current_user.id) %> | <%= link_to 'All Feedings', feedings_path %><br>
-
-<%= link_to 'Edit', edit_user_registration_path %> |
-<%= link_to 'Back', root_path %>
+</div>
+</div>
