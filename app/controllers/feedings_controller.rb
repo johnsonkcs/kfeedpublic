@@ -53,7 +53,7 @@ class FeedingsController < ApplicationController
 
         # @mailing_list.each do |subscriber|
         # FeedingsMailer.notification_email(subscriber, @feeding).deliver
-        end 
+        # end 
 
         format.html { redirect_to @feeding, notice: 'Feeding was successfully created.' }
         format.json { render :show, status: :created, location: @feeding }
