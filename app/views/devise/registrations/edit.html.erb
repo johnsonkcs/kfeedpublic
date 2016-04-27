@@ -4,18 +4,22 @@
 </div>
 <% end %>
 
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container">
+  <div class="jumbotron">
+    <div class="jumbotron-user-page">
+      <h1> Update Your Profile </h1>
+      <p class="lead">Fill in the form below blablabla</p>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, class:"h4" %><br />
     <%= f.text_field :name, autofocus: true, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email, class:"h4" %><br />
     <%= f.email_field :email, autocomplete: "off" %>
   </div>
 
@@ -24,27 +28,29 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :upload_profile_picture %><br>
+    <%= f.label :upload_profile_picture, class:"h4" %><br>
     <%= f.file_field :profile_pic %>
   </div>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :password, class:"h4" %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, class:"h4" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update", class: "btn btn-warning", style: "margin-top: 11px" %>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<br><br><br><br><br><br>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
 
-<%= link_to "Back", user_path(current_user.id) %>
+</div>
+</div>
+</div>
