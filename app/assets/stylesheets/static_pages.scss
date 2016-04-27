@@ -18,8 +18,25 @@ $screen-md-min: 992px;
 }
 
 
+/*.form-wrapper button, .form-wrapper button:hover {
+    background: #8200e8;
+        border-right-color: #e54040;
+
+}
+
+ .form-wrapper button:hover:before, .form-wrapper button:before {
+
+}*/
+
+/*.form-wrapper button:hover:before {
+    border-right-color: #e54040;
+}*/
+
 @media (min-width: $screen-md-min) { 
 
+#cap-text {
+    color: #000;
+}
 
 
 
@@ -51,7 +68,11 @@ $screen-md-min: 992px;
         right:-30%; 
         height: 450px;
         width: 80%;
-        background-color: #75B9DC;
+        background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.5)),image-url("feeders.jpg");
+        -webkit-background-size: cover;
+        background-size: cover;
+        /*background: linear-gradient(rgba(52, 200, 184, 0.8), rgba(52, 200, 184, 0.5)),image-url("feeders.jpg");*/
+        /*background-color: #34C8B8;*/
         border-left: 1px dotted;
         padding: 0;
 
@@ -60,17 +81,19 @@ $screen-md-min: 992px;
             padding: 140px 0 0 70px;
             h2 {
                 font-size: 50px;
-                font-family: 'Oswald', sans-serif;    
+                font-family: 'Oswald', sans-serif;
+                color: #fff;    
             }
 
             #btn-right {
                 height: 50px;
+                /*background-color: #E54040!important;*/
             }
             
         }
 
         .body-2-right-2 {
-            // display: none;
+            
             background-size: cover;
             padding: 120px 70px 0 70px ;
             height: 450px;
@@ -103,7 +126,10 @@ $screen-md-min: 992px;
         height: 450px;
         width: 80%;
         z-index: 2;
-        background-color: #75B9DC;
+         background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.5)),image-url("oraganization.jpg");
+        -webkit-background-size: cover;
+        background-size: cover;
+        /*background-color: #34C8B8;*/
         border-right: 1px dotted;
 
         .body-2-left-1 {
@@ -130,11 +156,13 @@ $screen-md-min: 992px;
 
             h2 {
                 font-size: 50px;   
-                font-family: 'Oswald', sans-serif; 
+                font-family: 'Oswald', sans-serif;
+                color: #fff; 
             }
 
              #btn-left {
                 height: 50px;
+                /*background-color: #E54040;*/
             }
             
             
@@ -153,23 +181,27 @@ $screen-md-min: 992px;
 	height: 500px;
 	background: #fff;
 
+    .body-3-text {
+        font-size: 2em;
+    }
+
     h1 {
     font-size: 70px;   
     font-family: 'Oswald', sans-serif;
-    color: #FF5A60
+    color: #5E5B5B;
     } 
 }
 
 
 .body-4 {
-    height: 500px;
-    background: grey;
+    height: 600px;
+    background: #27323A;
 
     .panel {
         margin-top: 60px;
         display: inline-block;
         width: 80%;
-        height: 500px;
+        height: 600px;
     }
 
 }
@@ -226,6 +258,22 @@ $screen-md-min: 992px;
     100% { left: -1684px; }
 }
 
+.middle-body {
+    height: 300px;
+    background-color: #34c8b8;
+    background-image: url("http://www.transparenttextures.com/patterns/gplay.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+
+    .mid-text {
+        margin: 100px 0 0 0;
+        h1 {
+        font-size: 30px;   
+        font-family: 'Oswald', sans-serif;
+        color: #fff;
+        } 
+    }
+}
+
 }
 
 //////////////////////////////////////////////////////////small
@@ -237,12 +285,22 @@ $screen-md-min: 992px;
 
 @media (max-width: 769px) { 
 
+    .mynavbar {
+  padding: 0 20px 0 20px!important;
+ 
+
+}
+
     .video-header {
     padding: 0;
 }
 
 #cap-text {
-    margin-top: 90px;
+    margin-top: 120px;
+}
+
+#johnson-input {
+    font-size: 0.8em;
 }
 
 .body-1 {
@@ -258,7 +316,7 @@ $screen-md-min: 992px;
     height: 400px;
     position: relative;
     overflow: hidden;
-    background-image: url("http://www.transparenttextures.com/patterns/black-twill.png");
+    /*background-image: url("http://www.transparenttextures.com/patterns/black-twill.png");*/
 }
 #tech-slideshow > div {
     height: 400px;
@@ -305,57 +363,28 @@ $screen-md-min: 992px;
 }
 
 .body-2 {
-    height: 450px;
-    background: #fff;
+    /*height: 720px;*/
+    
+    /*background: #fff;*/
     margin-top: -70px !important;
     position: relative;
     overflow-x: hidden;
 
 
-    .body-2-right {
+    .body-2-up {
         
+        background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.5)),image-url("feeders.jpg");
+        -webkit-background-size: cover;
+        background-size: cover;
+       padding: 10px;
+
+       h2 {
+        color: #fff;
+       }
         
-        position:absolute;
-        top:0; 
-        right:-30%; 
-        height: 450px;
-        width: 80%;
-        background-color: #75B9DC;
-        border-left: 1px dotted;
-        padding: 0;
-
-        .body-2-right-1 {
-            
-            padding: 140px 0 0 70px;
-            h2 {
-                font-size: 50px;
-                font-family: 'Oswald', sans-serif;    
-            }
-
-            #btn-right {
-                height: 50px;
-            }
-            
+        .panel {
+            background-color: transparent;
         }
-
-        .body-2-right-2 {
-            // display: none;
-            background-size: cover;
-            padding: 120px 70px 0 70px ;
-            height: 450px;
-            h2 {
-                font-size: 30px;
-                font-family: 'Oswald', sans-serif; 
-                color: white;   
-            }
-
-            .panel {
-                display: none;
-                border: 1px dotted;
-                background: transparent;
-            }
-        }
-
 
         
     }
@@ -364,50 +393,20 @@ $screen-md-min: 992px;
 
    
 
-     .body-2-left {
-        padding: 0;
-        position:absolute;
-        top:0; 
-        left:-30%; 
-        height: 450px;
-        width: 80%;
-        z-index: 2;
-        background-color: #75B9DC;
-        border-right: 1px dotted;
+     .body-2-down {
+        background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.5)),image-url("oraganization.jpg");
+        -webkit-background-size: cover;
+        background-size: cover;
+        padding: 10px;
 
-        .body-2-left-1 {
-           
-            background-size: cover;
-            padding: 120px 70px 0 70px;
-            height: 450px;
+         h2 {
+        color: #fff;
+       }
 
-            h2 {
-                font-size: 30px;
-                font-family: 'Oswald', sans-serif;
-                color: white;    
-            }
-
-            .panel {
-                 display: none;
-                border: 1px dotted;
-                background: transparent;
-            }
+        .panel {
+            background-color: transparent;
         }
 
-        .body-2-left-2 {
-            padding: 140px 70px 0 0;
-
-            h2 {
-                font-size: 50px;   
-                font-family: 'Oswald', sans-serif; 
-            }
-
-             #btn-left {
-                height: 50px;
-            }
-            
-            
-        }
        
     }
 
@@ -421,18 +420,21 @@ $screen-md-min: 992px;
 .body-3 {
     height: 300px;
     background: #fff;
+        margin-top: -30px!Important;
 
     h1 {
     font-size: 20px;   
     font-family: 'Oswald', sans-serif;
-    color: #FF5A60
+    color: #5E5B5B;
     } 
+
+
 }
 
 
 .body-4 {
     height: 200px;
-    background: grey;
+    background: #27323A;
 
     .panel {
         margin-top: 30px;
@@ -441,6 +443,22 @@ $screen-md-min: 992px;
     height: 200px;
     }
 
+}
+
+.middle-body {
+    height: 300px;
+    background-color: #34c8b8;
+    background-image: url("http://www.transparenttextures.com/patterns/gplay.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+
+    .mid-text {
+        margin: 40px 0 0 0;
+        h1 {
+        font-size: 40px;   
+        font-family: 'Oswald', sans-serif;
+        color: #fff;
+        } 
+    }
 }
 
 

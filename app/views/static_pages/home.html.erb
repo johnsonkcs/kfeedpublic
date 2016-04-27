@@ -6,6 +6,8 @@
 
 <div id="slide-1" class="container-fluid video-header">
 
+
+
    <div class="row body-1"  >
 
          
@@ -40,31 +42,65 @@
       </div>
    </div>
 
+<div class="row body-3 text-center">
+  <div class="col-xs-12 body-3-text">
+  <h1>Solving Hunger With Kindess</h1>
+
+          <p>Feed The Poor & Homeless Sessions usually happens at night after 10pm, simply because that is when all the shops have closed and they would be able to go back to the sidewalks in front of the shops to “roll out” their makeshift beds.</p>
+
+          <p>Now with KFeed you are able to reach these people by oraganzing such event or provide food for others who is already out there. If you are just someone who plans to join some events, KFeed is also your place.</p>
+
+          <p></p>
+    
+
+  </div>
+          
+
+      </div>
+
 
       <div class="row body-2 hidden-md hidden-lg">
 
-        <div class="col-12-xs">
+        <div class="col-12-xs body-2-up">
 
            <div class="panel panel-default">
-                  <div class="panel-body">
+                  <div class="panel-body text-center">
                        <h2>
-                      Organizer could search feeders which is love to be a volunteer for your events
+                      Organizer could search feeders who loves to be a volunteer for your events
                     </h2>
-                    <p class="text-center"><a href="<%=new_user_registration_path%>"><button type="button" class="btn btn-success btn-join">JOIN NOW</button></a></p>
+                    <%if user_signed_in?%>
+
+                      
+                      <p class="text-center"><a href="<%=feedings_path%>"><button type="button" class="btn btn-success btn-join">SEARCH NOW</button></a></p>
+                    <%else%>
+
+                      <p class="text-center"><a href="<%=new_user_registration_path%>"><button type="button" class="btn btn-success btn-join">JOIN NOW</button></a></p>
+
+
+                    <%end%>
+                    
                   </div>
                 </div>
           
 
         </div>
-        <div class="col-12-xs">
+        <div class="col-12-xs body-2-down">
 
             <div class="panel panel-default">
-                  <div class="panel-body">
+                  <div class="panel-body text-center">
 
                   <h2>
-                  Feeder could search organizer to join thier events.
+                  Feeder could search organizers to join thier events.
                 </h2>
-                <p class="text-center"><a href="<%=new_user_registration_path%>"><button type="button" class="btn btn-success btn-join">JOIN NOW</button></a></p>
+                <%if user_signed_in?%>
+
+                      
+                      <p class="text-center"><a href="<%=feedings_path%>"><button type="button" class="btn btn-success btn-join">SEARCH NOW</button></a></p>
+                    <%else%>
+
+                      <p class="text-center"><a href="<%=new_user_registration_path%>"><button type="button" class="btn btn-success btn-join">JOIN NOW</button></a></p>
+
+                    <%end%>
                   </div>
                 </div>
           
@@ -88,14 +124,23 @@
                        <h2>
                       Organizer could search feeders which is love to be a volunteer for your events
                     </h2>
-                    <a href="<%=new_user_registration_path%>"><button type="button" class="btn btn-success btn-join">JOIN NOW</button></a>
+                    <%if user_signed_in?%>
+
+                      
+                      <p class="text-center"><a href="<%=feedings_path%>"><button type="button" class="btn btn-success btn-join">SEARCH NOW</button></a></p>
+                    <%else%>
+
+                      <p class="text-center"><a href="<%=new_user_registration_path%>"><button type="button" class="btn btn-success btn-join">JOIN NOW</button></a></p>
+
+
+                    <%end%>
                   </div>
                 </div>
                
               </div>
               <div class="col-md-6 body-2-left-2 text-center">
                 <h2>For Organizer</h2>
-                <a href=""><button id="btn-left" type="button" class="btn btn-success">Find feeders</button></a>
+                <a href=""><button id="btn-left" type="button" class="btn btn-danger">Find feeders</button></a>
 
               </div>
             </div>
@@ -109,7 +154,7 @@
               <div class="row">
               <div class="col-md-6 body-2-right-1 text-center">
               <h2>For Feeder</h2>
-                <a href=""><button id="btn-right" type="button" class="btn btn-success">Find organizer</button></a>
+                <a href=""><button id="btn-right" type="button" class="btn btn-danger">Find organizer</button></a>
                 
               </div>
               <div class="col-md-6 body-2-right-2 text-center">
@@ -120,7 +165,16 @@
                   <h2>
                   Feeder could search organizer to join thier events.
                 </h2>
-                <a href="<%=new_user_registration_path%>"><button type="button" class="btn btn-success btn-join">JOIN NOW</button></a>
+                <%if user_signed_in?%>
+
+                      
+                      <p class="text-center"><a href="<%=feedings_path%>"><button type="button" class="btn btn-success btn-join">SEARCH NOW</button></a></p>
+                    <%else%>
+
+                      <p class="text-center"><a href="<%=new_user_registration_path%>"><button type="button" class="btn btn-success btn-join">JOIN NOW</button></a></p>
+
+
+                    <%end%>
                   </div>
                 </div>
                 
@@ -136,11 +190,11 @@
   
 
     
-      <div class="row body-3 text-center">
-          <h1>Solving Hunger With Kindess</h1>
-
+      <div class="row middle-body">
+        <div class="col-xs-12 mid-text text-center">
+          <h1>YOU’LL REALIZE THAT THERE’S A WHOLE DIFFERENT WORLD OUT THERE</h1>
+        </div>
       </div>
-
 
 
       <div class="row body-4">
@@ -149,7 +203,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                   <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://youtu.be/qWZH0NcpN68"></iframe>
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/qWZH0NcpN68"></iframe>
                   </div>
                 </div>
                 
