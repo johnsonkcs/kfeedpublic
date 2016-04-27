@@ -10,6 +10,7 @@ class FeedingsController < ApplicationController
     else
     @feedings = Feeding.all.paginate(:page => params[:page], per_page: 5).order(created_at: :desc)
     end
+
     @hash = Gmaps4rails.build_markers(@feedings) do |feeding, marker|
       marker.lat feeding.latitude
       marker.lng feeding.longitude
@@ -45,6 +46,7 @@ class FeedingsController < ApplicationController
     @user = current_user
     @feeding = @user.feedings.new(feeding_params)
     @mailing_list = User.where(:email => "johnson.raz.kev@gmail.com")
+
 
     respond_to do |format|
       if @feeding.save

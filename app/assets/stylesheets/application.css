@@ -17,9 +17,11 @@
 
 
 
+
 .mynavbar {
   padding: 0 80px 0 80px;
 }
+
 
 
  .picpic {
@@ -31,6 +33,7 @@
 
 .videoWrapper {
   position: relative;
+
   /*padding-bottom: 56.25%; /* 16:9 */
   /*padding-top: 1px;*/
   /*height: 0;*/
@@ -42,6 +45,7 @@
    /*background: linear-gradient(rgba(61,98,107,0.8), rgba(0,0,0,0.5)),center,url(http://www.transparenttextures.com/patterns/az-subtle.png));*/
 
 
+
 }
 .videoWrapper iframe {
   position: absolute;
@@ -51,6 +55,7 @@
   height: 100%;
   z-index: -1;
  
+
 }
 
 .row {
@@ -186,8 +191,10 @@ h6 {
   margin: 4px 0px 6px 0px;
   padding: 4px 0px 6px 0px;
   border-bottom: 1px solid rgba(0, 0, 0, .08);
+
   }
 
 .submit-field {
   padding: 8px 0px 0px 0px;
 }
+

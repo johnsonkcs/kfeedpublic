@@ -37,6 +37,7 @@ input[type=search] {
 	border: solid 1px #ccc;
 	padding: 9px 10px 9px 32px;
 	width: 50%;
+
 	height: 12px;
 	
 	-webkit-border-radius: 10em;
@@ -48,6 +49,7 @@ input[type=search] {
 	transition: all .5s;
 }
 input[type=search]:focus {
+
 	width: 70%;
 	background-color: #fff;
 	border-color: #66CC75;
@@ -285,6 +287,7 @@ input::-webkit-input-placeholder {
     #hometop{
     font-size: 22px;
     }
+
     #slidepic{
     display:none;
     }

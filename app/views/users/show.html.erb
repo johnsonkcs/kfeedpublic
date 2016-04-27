@@ -23,7 +23,90 @@
 <% end %> <!-- end user profile pic blank -->
 
 <div class="blankspace" style="min-height: 100px;">
+
 <!-- LENA'S PART -->
+
+<div class="container-fluid profilebody">
+	<div class="row profile">
+		<div class="col-sm-4">
+		</div>
+		<div class="col-sm-4">
+		<section class="card">
+		  <figure class="panel meta">
+		  	<picture>
+			<div class="img-thumbnail">
+				<%= image_tag current_user.profile_pic.url(:thumb) %>
+			</div>
+		    </picture>
+		    <figcaption>
+
+		      <h1 class="name"><%=current_user.name%></h1>
+		      <h3 class="title">		
+		      	<%if @feeder_count < 2%>
+					Baby Feeder
+				<%elsif @feeder_count < 5 || @feeder_count >= 2%>
+					Knight of Feeders
+				<%elsif @feeder_count < 7 || @feeder_count >= 5%>
+					Hero of Feeders
+				<%else%>
+					Legend of Feeders
+				<%end%>,
+
+				<%if @feeding_count < 2%>
+					Baby Organizer
+				<%elsif @feeding_count < 5 || @feeding_count >= 2%>
+					Silver Organizer
+				<%elsif @feeding_count < 7 || @feeding_count >= 5%>
+					Super Organizer
+				<%else%>
+					Master Organizer
+				<%end%>
+				</h3>
+		    </figcaption>
+		  </figure>
+		  
+		  <div class="panel info">
+		  	<div class = 'email'>
+			  	<p><img src="https://cdn2.iconfinder.com/data/icons/New-Social-Media-Icon-Set-V11/512/email.png" alt="Email Icon" style="width:20px;height:20px;">
+				<%=current_user.email%></p>
+		  	</div>
+
+		  	<div class = 'feeder'>
+			  	<dt><%=link_to "Feeder", user_feeders_path(current_user)%></dt>
+			  	<dd>1</dd>
+			  	<%if @feeder_count == 0%>
+			  		<p>You have joined 0 feeding!</p>
+			  	<%else%>
+					<p>You have joined <%=pluralize(@feeder_count, 'feeding')%>!</p>
+				<%end%>
+		  	</div>
+
+		  	<div class = 'feeding'>
+		  	<dt><%=link_to "Feeding", user_feedings_path(current_user)%></dt>
+		  	<dd>1</dd>
+		  	<%if @feeding_count == 0%>
+		  		<p>You have organized 0 feeding!</p>
+			<%else%>
+				<p>You have organized <%=pluralize(@feeding_count, 'feeding')%>!</p>
+				<%end%>
+		  	</div>
+			
+<!-- 		    <dl class="skillz">
+		      <dt>Feeder</dt>
+		      <dd>80</dd>
+		      <dt>Feeding</dt>
+		      <dd>60</dd>
+		    </dl> -->
+		  </div>
+		  
+		</section>
+		</div>
+		<div class="col-sm-4">
+		</div>
+	</div>
+
+</div>
+<!-- END LENA'S PART -->
 </div>
 
 <div class="container text-center">

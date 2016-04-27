@@ -4,9 +4,11 @@ class FeedersController < ApplicationController
   # GET /feeders
   # GET /feeders.json
   def index
+
     @feeders = Feeder.paginate(:page => params[:page], per_page: 12).where(user_id: params[:user_id]).order(created_at: :desc)
     @quotes = ["A generous life is a fruitful life!", "Blessed are the ones who give", "A good deed a day makes your troubles go away!", "Feed the poor, Feed your soul!"] 
     @notes = ["Thank You!", "You're Awesome!", "Keep It Up!", "Bless You!"]
+
   end
 
   # GET /feeders/1
