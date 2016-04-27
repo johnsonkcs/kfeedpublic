@@ -93,13 +93,21 @@
 		  	<div class = 'feeder'>
 			  	<dt><%=link_to "Feeder", user_feeders_path(current_user)%></dt>
 			  	<dd>1</dd>
-				<p>You have joined <%=pluralize(@feeder_count, 'feeding')%>!</p>
+			  	<%if @feeder_count == 0%>
+			  		<p>You have joined 0 feeding!</p>
+			  	<%else%>
+					<p>You have joined <%=pluralize(@feeder_count, 'feeding')%>!</p>
+				<%end%>
 		  	</div>
 
 		  	<div class = 'feeding'>
 		  	<dt><%=link_to "Feeding", user_feedings_path(current_user)%></dt>
 		  	<dd>1</dd>
-			<p>You have orgainized <%=pluralize(@feeding_count, 'feeding')%>!</p>
+		  	<%if @feeding_count == 0%>
+		  		<p>You have organized 0 feeding!</p>
+			<%else%>
+				<p>You have organized <%=pluralize(@feeding_count, 'feeding')%>!</p>
+				<%end%>
 		  	</div>
 			
 <!-- 		    <dl class="skillz">
