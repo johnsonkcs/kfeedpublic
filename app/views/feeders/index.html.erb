@@ -78,7 +78,7 @@
                  </div>
                  <div class="content">
                      <div class="main">
-                         <h4 class="text-center">Event Details</h4>
+                         <h4 class="text-center"><%= link_to "Event Details", feeding_path(feeder.feeding.id) %></h4>
                           <p class="text-center"><%= feeder.feeding.place %></p>
                           <p class="text-center"><strong>Time: </strong> <%= feeder.feeding.time %> </p>
 
