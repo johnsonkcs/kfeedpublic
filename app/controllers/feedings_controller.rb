@@ -50,9 +50,9 @@ class FeedingsController < ApplicationController
       if @feeding.save
 
         @mailing_list.each do |subscriber|
-        FeedingsMailer.notification_email(subscriber, @feeding).deliver_later
+        FeedingsMailer.delay.notification_email(subscriber, @feeding)
         end 
-        
+
         format.html { redirect_to @feeding, notice: 'Feeding was successfully created.' }
         format.json { render :show, status: :created, location: @feeding }
       else
