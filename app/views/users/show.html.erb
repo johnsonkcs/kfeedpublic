@@ -20,7 +20,7 @@
   </div>
 </div>
 
-<% end %>
+<% end %> <!-- end user profile pic blank -->
 
 <div class="blankspace" style="min-height: 100px;">
 <!-- LENA'S PART -->
@@ -28,16 +28,16 @@
 
 <div class="container text-center">
   <div class="jumbotron" style="display:outline-block">
-      <h1> User Links </h1><br>
+      <h2> Explore Our Site </h2><br>
 
 <% if current_user.id == @user.id %>
-<%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-warning" %><br><br>
+<%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-warning", style: "margin-bottom: 10px" %> |
 <% end %>
-<%= link_to 'Create New Feeding', new_feeding_path, class: "btn btn-info" %>
+<%= link_to 'Create New Feeding', new_feeding_path, class: "btn btn-success", style: "margin-bottom: 10px" %>
 |
-<%= link_to 'Your Feedings', user_feedings_path(current_user.id), class: "btn btn-success" %>
+<%= link_to 'Your Feedings', user_feedings_path(current_user.id), class: "btn btn-danger", style: "margin-bottom: 10px" %>
 |
-<%= link_to 'All Feedings', feedings_path, class: "btn btn-success" %><br><br>
+<%= link_to 'All Feedings', feedings_path, class: "btn btn-info", style: "margin-bottom: 10px" %><br><br>
 <%= link_to 'Back', root_path, class: "btn btn-primary" %><br>
 
 </div>
