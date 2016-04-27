@@ -27,6 +27,7 @@ $(document).ready(function () {
    $("#btn-right").mouseover(function(){
          $(".body-2-left").css("background-color", "white");
          $(".body-2-right-2").addClass("feeder-bg");
+         $(".body-2-right-2").find(".panel").css("display", "block");
          
           $(".body-2-right").animate({
             
@@ -40,6 +41,7 @@ $(document).ready(function () {
 
       $(".body-2-left").css("background-color", "#75B9DC");
       $(".body-2-right-2").removeClass("feeder-bg");
+      $(".body-2-right-2").find(".panel").css("display", "none");
          $(".body-2-right").animate({
             
             right: '-30%'
@@ -52,6 +54,7 @@ $(document).ready(function () {
    $("#btn-left").mouseenter(function(){
          $(".body-2-right").css("background-color", "white");
          $(".body-2-left-1").addClass("org-bg");
+         $(".body-2-left-1").find(".panel").css("display", "block");
           $(".body-2-left").animate({
             left: '0'
         });
@@ -63,6 +66,7 @@ $(document).ready(function () {
 
         $(".body-2-right").css("background-color", "#75B9DC");
         $(".body-2-left-1").removeClass("org-bg");
+        $(".body-2-left-1").find(".panel").css("display", "none");
          $(".body-2-left").animate({
             
             left: '-30%'
