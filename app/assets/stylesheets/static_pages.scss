@@ -221,10 +221,10 @@ $screen-md-min: 992px;
 }
 #tech-slideshow > div {
     height: 600px;
-    width: 250%;
+    width: 600%;
     background: image-url("slider.jpg");
     background-repeat: no-repeat;
-	background-size: 170%;
+	background-size: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -236,8 +236,8 @@ $screen-md-min: 992px;
   -webkit-transition: opacity 0.5s ease-out; 
       -ms-transition: opacity 0.5s ease-out; 
 
-    -webkit-animation: moveSlideshow 20s linear infinite;
-    -moz-animation:    moveSlideshow 20s linear infinite;
+    -webkit-animation: moveSlideshow 60s linear infinite;
+    -moz-animation:    moveSlideshow 60s linear infinite;
     -webkit-transform: translate3d(0, 0, 0);
     
 }
@@ -256,11 +256,11 @@ $screen-md-min: 992px;
 
 @-webkit-keyframes moveSlideshow {
     0% { left: 0; }
-    100% { left: -1684px; }
+    100% { left: -500%; }
 }
 @-moz-keyframes moveSlideshow {
     0% { left: 0; }
-    100% { left: -1684px; }
+    100% { left: -500%; }
 }
 
 .middle-body {
@@ -330,7 +330,7 @@ $screen-md-min: 992px;
 }
 #tech-slideshow > div {
     height: 400px;
-    width: 250%;
+    width: 400%;
     background: image-url("slider.jpg");
     background-repeat: no-repeat;
     background-size: 350%;
@@ -345,8 +345,8 @@ $screen-md-min: 992px;
   -webkit-transition: opacity 0.5s ease-out; 
       -ms-transition: opacity 0.5s ease-out; 
 
-    -webkit-animation: moveSlideshow 50s linear infinite;
-    -moz-animation:    moveSlideshow 50s linear infinite;
+    -webkit-animation: moveSlideshow 60s linear infinite;
+    -moz-animation:    moveSlideshow 60s linear infinite;
     -webkit-transform: translate3d(0, 0, 0);
     
 }
@@ -365,11 +365,11 @@ $screen-md-min: 992px;
 
 @-webkit-keyframes moveSlideshow {
     0% { left: 0; }
-    100% { left: -1684px; }
+    100% { left: -300%; }
 }
 @-moz-keyframes moveSlideshow {
     0% { left: 0; }
-    100% { left: -1684px; }
+    100% { left: -300%; }
 }
 
 .body-2 {
