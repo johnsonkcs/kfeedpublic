@@ -43,17 +43,17 @@ class FeedersController < ApplicationController
 
 
 
-    redirect_to feeding_feeder_path(@feeding, @feeder)
+    # redirect_to feeding_feeder_path(@feeding, @feeder)
 
-    # respond_to do |format|
-    #   if @feeder.save
-    #     format.html { redirect_to @feeder, notice: 'Feeder was successfully created.' }
-    #     format.json { render :show, status: :created, location: @feeder }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @feeder.errors, status: :unprocessable_entity }
-    #   end
-    # end
+    respond_to do |format|
+      if @feeder.save
+        format.html { redirect_to user_feeders_path(current_user.id), notice: 'You have successfully joined' }
+        format.json { render :show, status: :created, location: @feeder }
+      else
+        format.html { render :new }
+        format.json { render json: @feeder.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /feeders/1
