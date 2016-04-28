@@ -15,7 +15,9 @@
  *= require_self
  */
 
-
+nav.navbar.navbar-inverse.navbar-static-top {
+    margin: 0;
+}
 
 
 
