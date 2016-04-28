@@ -211,7 +211,7 @@ $screen-md-min: 992px;
 #tech-slideshow > div {
     height: 600px;
     width: 600%;
-    background: image-url("kfeedmainpge.jpg");
+    background: image-url("kfeedhome.jpg");
     background-repeat: no-repeat;
 	background-size: 80%;
     position: absolute;
@@ -232,7 +232,7 @@ $screen-md-min: 992px;
 }
 
 #tech-slideshow-2 {
-    background-position: 0 -840px!important;
+    background-position: 0 -1100px!important;
     /*background: image-url("slider.jpg");*/
 }
 
@@ -319,7 +319,7 @@ $screen-md-min: 992px;
 #tech-slideshow > div {
     height: 400px;
     width: 600%;
-    background: image-url("kfeedmainpge.jpg");
+    background: image-url("kfeedhome.jpg");
     background-repeat: no-repeat;
     background-size: 150%;
     position: absolute;
@@ -371,7 +371,7 @@ $screen-md-min: 992px;
 
     .body-2-up {
         
-        background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.02)),image-url("feeders.jpg");
+        background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.02)),image-url("fleft.jpg");
         -webkit-background-size: cover;
         background-size: cover;
        padding: 10px;
@@ -392,7 +392,7 @@ $screen-md-min: 992px;
    
 
      .body-2-down {
-        background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.02)),image-url("oraganization.jpg");
+        background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.02)),image-url("fright.jpg");
         -webkit-background-size: cover;
         background-size: cover;
         padding: 10px;
