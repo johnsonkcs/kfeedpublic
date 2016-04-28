@@ -45,15 +45,15 @@ class FeedingsController < ApplicationController
   def create
     @user = current_user
     @feeding = @user.feedings.new(feeding_params)
-    # @mailing_list = User.where(:email => "johnson.raz.kev@gmail.com")
+    @mailing_list = User.where(:email => "johnson.raz.kev@gmail.com")
 
 
     respond_to do |format|
       if @feeding.save
 
-        # @mailing_list.each do |subscriber|
-        # FeedingsMailer.notification_email(subscriber, @feeding).deliver
-        # end 
+        @mailing_list.each do |subscriber|
+        FeedingsMailer.notification_email(subscriber, @feeding).deliver
+        end 
 
         format.html { redirect_to @feeding, notice: 'Feeding was successfully created.' }
         format.json { render :show, status: :created, location: @feeding }
