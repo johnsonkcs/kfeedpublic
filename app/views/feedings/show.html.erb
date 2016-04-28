@@ -222,7 +222,7 @@
     </tr>
     <tr>
     <td colspan="3" style="text-align: center">
-    <%= link_to 'Be The First Kind Person To Join!', feeding_feeders_path(@feeding), class: "btn btn-lg btn-success" %>
+    <%= link_to 'Be The First Kind Person To Join!', feeding_feeders_path(@feeding),method: :post, data:  {no_turbolink: true}, class: "btn btn-lg btn-success" %>
     </td>
     </tr>
     <% else %>
