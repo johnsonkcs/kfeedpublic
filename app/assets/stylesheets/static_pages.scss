@@ -14,29 +14,17 @@ $screen-md-min: 992px;
 
 .org-bg {
     background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.5)),image-url("oraganization.jpg");
-    /*background-image: image-url("feeders.jpg");*/
+    
 }
 
 
-/*.form-wrapper button, .form-wrapper button:hover {
-    background: #8200e8;
-        border-right-color: #e54040;
-
-}
-
- .form-wrapper button:hover:before, .form-wrapper button:before {
-
-}*/
-
-/*.form-wrapper button:hover:before {
-    border-right-color: #e54040;
-}*/
 
 @media (min-width: $screen-md-min) { 
 
 #cap-text {
-    color: #000;
-    -webkit-text-stroke: 1.5px white;
+    color: #fff;
+   /* -webkit-text-stroke: 1.5px white;*/
+   font-family: 'Oswald', sans-serif;
     font-weight: 600;
 }
 
@@ -199,14 +187,15 @@ $screen-md-min: 992px;
 
 
 .body-4 {
-    height: 600px;
+    /*height: 600px;*/
     background: #27323A;
 
     .panel {
-        margin-top: 60px;
+        position: relative;
+        top: 50px;
         display: inline-block;
         width: 80%;
-        height: 600px;
+        /*height: 600px;*/
     }
 
 }
@@ -221,10 +210,10 @@ $screen-md-min: 992px;
 }
 #tech-slideshow > div {
     height: 600px;
-    width: 250%;
+    width: 600%;
     background: image-url("slider.jpg");
     background-repeat: no-repeat;
-	background-size: 170%;
+	background-size: 80%;
     position: absolute;
     top: 0;
     left: 0;
@@ -236,14 +225,14 @@ $screen-md-min: 992px;
   -webkit-transition: opacity 0.5s ease-out; 
       -ms-transition: opacity 0.5s ease-out; 
 
-    -webkit-animation: moveSlideshow 20s linear infinite;
-    -moz-animation:    moveSlideshow 20s linear infinite;
+    -webkit-animation: moveSlideshow 60s linear infinite;
+    -moz-animation:    moveSlideshow 60s linear infinite;
     -webkit-transform: translate3d(0, 0, 0);
     
 }
 
 #tech-slideshow-2 {
-    background-position: 0 -690px!important;
+    background-position: 0 -790px!important;
     /*background: image-url("slider.jpg");*/
 }
 
@@ -256,16 +245,17 @@ $screen-md-min: 992px;
 
 @-webkit-keyframes moveSlideshow {
     0% { left: 0; }
-    100% { left: -1684px; }
+    100% { left: -370%; }
 }
 @-moz-keyframes moveSlideshow {
     0% { left: 0; }
-    100% { left: -1684px; }
+    100% { left: -370%; }
 }
 
 .middle-body {
+
     height: 300px;
-    background-color: #34c8b8;
+    background-color: #DCDCDA;
     background-image: url("http://www.transparenttextures.com/patterns/gplay.png");
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 
@@ -291,9 +281,7 @@ $screen-md-min: 992px;
 @media (max-width: 769px) { 
 
 
-    .navbar-collapse.collapse.in {
-    background-color: #34c8b8;
-}
+    
 
     .mynavbar {
   padding: 0 20px 0 20px!important;
@@ -306,7 +294,7 @@ $screen-md-min: 992px;
 }
 
 #cap-text {
-    margin-top: 120px;
+    margin-top: 30px;
 }
 
 #johnson-input {
@@ -330,10 +318,10 @@ $screen-md-min: 992px;
 }
 #tech-slideshow > div {
     height: 400px;
-    width: 250%;
+    width: 600%;
     background: image-url("slider.jpg");
     background-repeat: no-repeat;
-    background-size: 350%;
+    background-size: 150%;
     position: absolute;
     top: 0;
     left: 0;
@@ -345,8 +333,8 @@ $screen-md-min: 992px;
   -webkit-transition: opacity 0.5s ease-out; 
       -ms-transition: opacity 0.5s ease-out; 
 
-    -webkit-animation: moveSlideshow 50s linear infinite;
-    -moz-animation:    moveSlideshow 50s linear infinite;
+    -webkit-animation: moveSlideshow 60s linear infinite;
+    -moz-animation:    moveSlideshow 60s linear infinite;
     -webkit-transform: translate3d(0, 0, 0);
     
 }
@@ -356,20 +344,20 @@ $screen-md-min: 992px;
     /*background: image-url("slider.jpg");*/
 }
 
-#tech-slideshow:hover > #tech-slideshow-1 {
+/*#tech-slideshow:hover > #tech-slideshow-1 {
     opacity: 0;
 }
-
+*/
 
 
 
 @-webkit-keyframes moveSlideshow {
     0% { left: 0; }
-    100% { left: -1684px; }
+    100% { left: -500%; }
 }
 @-moz-keyframes moveSlideshow {
     0% { left: 0; }
-    100% { left: -1684px; }
+    100% { left: -500%; }
 }
 
 .body-2 {
@@ -443,21 +431,27 @@ $screen-md-min: 992px;
 
 
 .body-4 {
-    height: 200px;
+    
     background: #27323A;
 
     .panel {
-        margin-top: 30px;
+    position: relative;
+        top: 50px;
+        display: inline-block;
+        width: 80%;
+
+
+       /* margin-top: 30px;
     display: inline-block;
     width: 90%;
-    height: 200px;
+    height: 200px;*/
     }
 
 }
 
 .middle-body {
     height: 300px;
-    background-color: #34c8b8;
+    background-color: #DCDCDA;
     background-image: url("http://www.transparenttextures.com/patterns/gplay.png");
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 
