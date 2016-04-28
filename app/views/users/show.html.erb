@@ -26,6 +26,114 @@
 
 <!-- LENA'S PART -->
 
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2">
+ <div class="card-container">
+         <div class="card">
+             <div class="front">
+                 <div class="cover">
+                     <%= image_tag @user.profile_pic.url(:slide).to_s, class:"img-responsive"%>
+                 </div>
+                 <div class="user">
+                     <%= image_tag @user.profile_pic.url(:mid).to_s, class:"img-circle img-responsive"%>
+                 </div>
+                 <div class="content">
+                     <div class="main">
+                         <h3 class="name"> <%= @user.name %> </h3>
+                         <p class="profession">
+                         YOUR STATUS
+				         </p>
+
+
+                         <p class="text-center"><strong>
+                           <%if @feeder_count < 2%>
+					       Baby Feeder
+				         <%elsif @feeder_count < 5 || @feeder_count >= 2%>
+					       Knight of Feeders
+				         <%elsif @feeder_count < 7 || @feeder_count >= 5%>
+					       Hero of Feeders
+				         <%else%>
+					       Legend of Feeders
+				         <%end%>                        	
+                         </strong></p>
+
+                        <p class="text-center"><strong>
+                    	<%if @feeding_count < 2%>
+					       Baby Organizer
+				        <%elsif @feeding_count < 5 || @feeding_count >= 2%>
+				           Silver Organizer
+			        	<%elsif @feeding_count < 7 || @feeding_count >= 5%>
+					       Super Organizer
+				        <%else%>
+					       Master Organizer
+				        <%end%>
+				         </strong></p>
+
+
+                     </div>
+                     <div class="footer">
+                         <div class="rating">
+                             You're Awesome!
+                         </div>
+                     </div>
+                 </div>
+             </div> <!-- end front panel -->
+             <div class="back">
+                 <div class="header">
+                     <h5 class="motto">"A life lived selfishly is a life wasted..." - Johnson Khoo</h5>
+                 </div>
+                 <div class="content">
+                     <div class="main">
+                         <h4 class="text-center"><strong><%= link_to "Feeding Events Joined", user_feeders_path(current_user.id)%></strong></h4>
+                         <p class="text-center">	
+                         <%if @feeder_count == 0%>
+			  		  You have never joined any feeding event!
+			  	         <%else%>
+					You have joined <%=pluralize(@feeder_count, 'feeding event(s)')%>!
+				         <%end%>
+				         </p>
+
+				         <h4 class="text-center"><strong><%= link_to "Feeding Events Organized/Posted", user_feedings_path(current_user.id)%></strong></h4>
+                         <p class="text-center">	
+                      	<%if @feeding_count == 0%>
+		  		       You have never organized any feedings nor posted any food for collection!
+			           <%else%>
+				       You have organized/posted <%=pluralize(@feeding_count, 'feeding event(s) or food donations')%>!
+				       <%end%>
+				         </p>
+
+                         <div class="stats-container">
+                             <div class="stats">
+                                 <h4>HIP</h4>
+                                
+                             </div>
+                             <div class="stats">
+                                 <h4>HIP</h4>
+                        
+                             </div>
+                             <div class="stats">
+                                 <h4>HOORAY!</h4>
+        
+                             </div>
+                         </div>
+
+                     </div>
+                 </div>
+                 <div class="footer">
+                 <h4>Continue Being Awesome!</h4>
+   
+                     </div>
+                 </div>
+             </div> <!-- end back panel -->
+         </div> <!-- end card -->
+     </div> <!-- end card-container -->
+     </div>
+
+</div>
+</div>
+
+<!-- 
 <div class="container-fluid profilebody">
 	<div class="row profile">
 		<div class="col-sm-4">
@@ -90,14 +198,14 @@
 				<p>You have organized <%=pluralize(@feeding_count, 'feeding')%>!</p>
 				<%end%>
 		  	</div>
-			
+			 -->
 <!-- 		    <dl class="skillz">
 		      <dt>Feeder</dt>
 		      <dd>80</dd>
 		      <dt>Feeding</dt>
 		      <dd>60</dd>
 		    </dl> -->
-		  </div>
+	<!-- 	  </div>
 		  
 		</section>
 		</div>
@@ -105,12 +213,12 @@
 		</div>
 	</div>
 
-</div>
+</div> -->
 <!-- END LENA'S PART -->
 </div>
 
 <div class="container text-center">
-  <div class="jumbotron" style="display:outline-block">
+  <div id="explore" class="jumbotron" style="display:outline-block">
       <h2> Explore Our Site </h2><br>
 
 <% if current_user.id == @user.id %>
