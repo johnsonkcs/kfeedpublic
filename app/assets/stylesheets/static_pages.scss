@@ -58,7 +58,7 @@ $screen-md-min: 992px;
         right:-30%; 
         height: 450px;
         width: 80%;
-        background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.05)),image-url("feeders.jpg");
+        background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.03)),image-url("feeders.jpg");
         -webkit-background-size: cover;
         background-size: cover;
         /*background: linear-gradient(rgba(52, 200, 184, 0.8), rgba(52, 200, 184, 0.5)),image-url("feeders.jpg");*/
@@ -68,7 +68,7 @@ $screen-md-min: 992px;
 
         .body-2-right-1 {
             
-            padding: 140px 0 0 70px;
+            padding: 140px 0 0 110px;
             h2 {
                 font-size: 50px;
                 font-family: 'Oswald', sans-serif;
@@ -85,7 +85,7 @@ $screen-md-min: 992px;
         .body-2-right-2 {
             
             background-size: cover;
-            padding: 120px 70px 0 70px ;
+            padding: 140px 70px 0 70px ;
             height: 450px;
             h2 {
                 font-size: 30px;
@@ -116,7 +116,7 @@ $screen-md-min: 992px;
         height: 450px;
         width: 80%;
         z-index: 2;
-         background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.05)),image-url("oraganization.jpg");
+         background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.03)),image-url("oraganization.jpg");
         -webkit-background-size: cover;
         background-size: cover;
         /*background-color: #34C8B8;*/
@@ -142,7 +142,7 @@ $screen-md-min: 992px;
         }
 
         .body-2-left-2 {
-            padding: 140px 70px 0 0;
+            padding: 140px 150px 0 0;
 
             h2 {
                 font-size: 50px;   
@@ -371,7 +371,7 @@ $screen-md-min: 992px;
 
     .body-2-up {
         
-        background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.5)),image-url("feeders.jpg");
+        background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.02)),image-url("feeders.jpg");
         -webkit-background-size: cover;
         background-size: cover;
        padding: 10px;
@@ -392,7 +392,7 @@ $screen-md-min: 992px;
    
 
      .body-2-down {
-        background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.5)),image-url("oraganization.jpg");
+        background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.02)),image-url("oraganization.jpg");
         -webkit-background-size: cover;
         background-size: cover;
         padding: 10px;
