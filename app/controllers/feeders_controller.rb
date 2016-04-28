@@ -75,7 +75,7 @@ class FeedersController < ApplicationController
   def destroy
     @feeder.destroy
     respond_to do |format|
-      format.html { redirect_to feeders_url, notice: 'Feeder was successfully destroyed.' }
+      format.html { redirect_to user_feeders_path(current_user.id), notice: 'Feeder was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
