@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160425094928) do
+ActiveRecord::Schema.define(version: 20160428001141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,18 @@ ActiveRecord::Schema.define(version: 20160425094928) do
     t.json     "feeding_pics"
     t.string   "name"
   end
+
+  add_index "feedings", ["created_at"], name: "index_feedings_on_created_at", using: :btree
+  add_index "feedings", ["date"], name: "index_feedings_on_date", using: :btree
+  add_index "feedings", ["latitude"], name: "index_feedings_on_latitude", using: :btree
+  add_index "feedings", ["longitude"], name: "index_feedings_on_longitude", using: :btree
+  add_index "feedings", ["name"], name: "index_feedings_on_name", using: :btree
+  add_index "feedings", ["pax_limit"], name: "index_feedings_on_pax_limit", using: :btree
+  add_index "feedings", ["place"], name: "index_feedings_on_place", using: :btree
+  add_index "feedings", ["price"], name: "index_feedings_on_price", using: :btree
+  add_index "feedings", ["time"], name: "index_feedings_on_time", using: :btree
+  add_index "feedings", ["updated_at"], name: "index_feedings_on_updated_at", using: :btree
+  add_index "feedings", ["user_id"], name: "index_feedings_on_user_id", using: :btree
 
   create_table "payments", force: :cascade do |t|
     t.integer  "feeder_id"
