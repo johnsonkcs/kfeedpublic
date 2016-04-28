@@ -41,7 +41,7 @@
         <p class="text-center lead"><span class="label label-success"> JOINED </span></p>
         <% else %>
             <% if feeder.payments.where(status: :authorized).blank? %>
-            <p class="text-center"><%= link_to '<button class="btn btn-danger" type="button">Pay Now</button>'.html_safe , feeding_feeder_path(feeder.feeding.id, feeding.id) %> </p>
+            <p class="text-center"><%= link_to '<button class="btn btn-danger" type="button">Pay Now</button>'.html_safe , feeding_feeder_path(feeder.feeding.id, feeder.id) %> </p>
             <% else %>
             <p class="text-center lead"><span class="label label-success"> PAID </span></p>
             <% end %>
@@ -55,7 +55,7 @@
         <p class="text-center lead"><span class="label label-success"> JOINED </span></p>
         <% else %>
             <% if feeder.payments.where(status: :authorized).blank? %>
-            <p class="text-center"><%= link_to '<button class="btn btn-danger" type="button">Pay Now</button>'.html_safe , feeding_feeder_path(feeder.feeding.id, feeding.id) %> </p>
+            <p class="text-center"><%= link_to '<button class="btn btn-danger" type="button">Pay Now</button>'.html_safe , feeding_feeder_path(feeder.feeding.id, feeder.id) %> </p>
             <% else %>
             <p class="text-center lead"><span class="label label-success"> PAID </span></p>
             <% end %>
@@ -88,7 +88,7 @@
         <p class="text-center lead"><span class="label label-warning"> FREE </span></p>
         <% else %>
             <% if feeder.payments.where(status: :authorized).blank? %>
-            <p class="text-center"><%= link_to '<button class="btn btn-sm btn-danger" type="button">Pay Now</button>'.html_safe , feeding_feeder_path(feeder.feeding.id, feeding.id) %> </p>
+            <p class="text-center"><%= link_to '<button class="btn btn-sm btn-danger" type="button">Pay Now</button>'.html_safe , feeding_feeder_path(feeder.feeding.id, feeder.id) %> </p>
             <% else %>
             <p class="text-center lead"><span class="label label-primary"><strong>Price: </strong> RM <%= feeder.feeding.price.to_s %> </span></p>
             <% end %>
@@ -102,7 +102,7 @@
         <p class="text-center lead"><span class="label label-primary"><strong>Price: </strong> RM <%= feeder.feeding.price.to_s %> </span></p>
         <% else %>
             <% if feeder.payments.where(status: :authorized).blank? %>
-            <p class="text-center"><%= link_to '<button class="btn btn-sm btn-danger" type="button">Pay Now</button>'.html_safe , feeding_feeder_path(feeder.feeding.id, feeding.id) %> </p>
+            <p class="text-center"><%= link_to '<button class="btn btn-sm btn-danger" type="button">Pay Now</button>'.html_safe , feeding_feeder_path(feeder.feeding.id, feeder.id) %> </p>
             <% else %>
             <p class="text-center lead"><span class="label label-primary"><strong>Price: </strong> RM <%= feeder.feeding.price.to_s %> </span></p>
             <% end %>
