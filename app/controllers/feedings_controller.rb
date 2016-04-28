@@ -55,7 +55,7 @@ class FeedingsController < ApplicationController
         # FeedingsMailer.notification_email(subscriber, @feeding).deliver
         # end 
 
-        format.html { redirect_to @feeding, notice: 'Feeding was successfully created.' }
+        format.html { redirect_to feeding_path(@feeding.id), notice: 'Feeding was successfully created.' }
         format.json { render :show, status: :created, location: @feeding }
       else
         format.html { render :new }
