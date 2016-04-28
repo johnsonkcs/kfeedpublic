@@ -10,7 +10,6 @@ class AddIndexToFeedings < ActiveRecord::Migration
   	add_index :feedings, :pax_limit
   	add_index :feedings, :created_at
   	add_index :feedings, :updated_at
-  	add_index :feedings, :feeding_pics
   	add_index :feedings, :name
   end
 end
