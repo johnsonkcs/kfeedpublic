@@ -307,6 +307,7 @@ input::-webkit-input-placeholder {
     .carousel-caption{
     top: 10%;
     bottom: auto;
+    padding-top: 20%
     }
     #cap-text{
     font-size: 28px;
@@ -364,6 +365,7 @@ input::-webkit-input-placeholder {
     .carousel-caption{
     top: -7%;
     bottom: auto;
+    padding-top: 20%
     }
     #cap-text{
     font-size: 30px;
@@ -398,6 +400,7 @@ input::-webkit-input-placeholder {
     .carousel-caption{
     top: -7%;
     bottom: auto;
+    padding-top: 20%
     }
     #cap-text{
     font-size: 30px;
@@ -420,7 +423,8 @@ input::-webkit-input-placeholder {
 
      @media screen and (max-width: 361px){
     .form-wrapper{
-    width:100%;
+    width:100%; 
+    margin-top: 150px;
     }
     #johnson-btn{
     font-size:10px !important;

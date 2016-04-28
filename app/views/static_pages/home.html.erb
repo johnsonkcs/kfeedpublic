@@ -23,8 +23,12 @@
          </div>
             <div class="container">
               <div class="carousel-caption">
-                  <h1 id="cap-text">Join A Feeding Near You Today!</h1>
+
+                    
+                  
+                  
                   <form class="form-wrapper cf" action="/search/?q=" method="get">
+                  <h1 id="cap-text">Join A Feeding Near You Today!</h1>
                   <input id="johnson-input" type="text" placeholder="Which City Are You From?" name="q">
                   <button id="johnson-btn" type="submit">Search</button>
                   </form>
@@ -72,10 +76,10 @@
                     <%if user_signed_in?%>
 
                       
-                      <p class="text-center"><a href="<%=feedings_path%>"><button type="button" class="btn btn-success btn-join">SEARCH NOW</button></a></p>
+                      <p class="text-center"><a href="<%=new_feeding_path%>"><button type="button" class="btn btn-join btn-danger">SEARCH NOW</button></a></p>
                     <%else%>
 
-                      <p class="text-center"><a href="<%=new_user_registration_path%>"><button type="button" class="btn btn-success btn-join">JOIN NOW</button></a></p>
+                      <p class="text-center"><a href="<%=new_user_registration_path%>"><button type="button" class="btn btn-join btn-danger">JOIN NOW</button></a></p>
 
 
                     <%end%>
@@ -96,10 +100,10 @@
                 <%if user_signed_in?%>
 
                       
-                      <p class="text-center"><a href="<%=feedings_path%>"><button type="button" class="btn btn-success btn-join">SEARCH NOW</button></a></p>
+                      <p class="text-center"><a href="<%=feedings_path%>"><button type="button" class="btn btn-join btn-danger">SEARCH NOW</button></a></p>
                     <%else%>
 
-                      <p class="text-center"><a href="<%=new_user_registration_path%>"><button type="button" class="btn btn-success btn-join">JOIN NOW</button></a></p>
+                      <p class="text-center"><a href="<%=new_user_registration_path%>"><button type="button" class="btn btn-join btn-danger">JOIN NOW</button></a></p>
 
                     <%end%>
                   </div>
@@ -128,7 +132,7 @@
                     <%if user_signed_in?%>
 
                       
-                      <p class="text-center"><a href="<%=feedings_path%>"><button type="button" class="btn btn-success btn-join">SEARCH NOW</button></a></p>
+                      <p class="text-center"><a href="<%=new_feeding_path%>"><button type="button" class="btn btn-success btn-join">SEARCH NOW</button></a></p>
                     <%else%>
 
                       <p class="text-center"><a href="<%=new_user_registration_path%>"><button type="button" class="btn btn-success btn-join">JOIN NOW</button></a></p>
