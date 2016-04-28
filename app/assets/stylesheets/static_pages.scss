@@ -58,7 +58,7 @@ $screen-md-min: 992px;
         right:-30%; 
         height: 450px;
         width: 80%;
-        background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.5)),image-url("feeders.jpg");
+        background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.05)),image-url("feeders.jpg");
         -webkit-background-size: cover;
         background-size: cover;
         /*background: linear-gradient(rgba(52, 200, 184, 0.8), rgba(52, 200, 184, 0.5)),image-url("feeders.jpg");*/
@@ -116,7 +116,7 @@ $screen-md-min: 992px;
         height: 450px;
         width: 80%;
         z-index: 2;
-         background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.5)),image-url("oraganization.jpg");
+         background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.05)),image-url("oraganization.jpg");
         -webkit-background-size: cover;
         background-size: cover;
         /*background-color: #34C8B8;*/
@@ -232,7 +232,7 @@ $screen-md-min: 992px;
 }
 
 #tech-slideshow-2 {
-    background-position: 0 -790px!important;
+    background-position: 0 -840px!important;
     /*background: image-url("slider.jpg");*/
 }
 
@@ -319,7 +319,7 @@ $screen-md-min: 992px;
 #tech-slideshow > div {
     height: 400px;
     width: 600%;
-    background: image-url("slider.jpg");
+    background: image-url("kfeedmainpge.jpg");
     background-repeat: no-repeat;
     background-size: 150%;
     position: absolute;
