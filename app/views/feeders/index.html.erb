@@ -41,7 +41,7 @@
         <p class="text-center lead"><span class="label label-success"> JOINED </span></p>
         <% else %>
             <% if feeder.payments.where(status: :authorized).blank? %>
-            <p class="text-center"><%= link_to '<button class="btn btn-danger" type="button">Pay Now</button>'.html_safe , feeding_feeders_path(feeder.feeding.id), method: :post, data:  {no_turbolink: true} %> </p>
+            <p class="text-center"><%= link_to '<button class="btn btn-danger" type="button">Pay Now</button>'.html_safe , feeding_feeder_path(feeder.feeding.id, feeding.id) %> </p>
             <% else %>
             <p class="text-center lead"><span class="label label-success"> PAID </span></p>
             <% end %>
@@ -55,7 +55,7 @@
         <p class="text-center lead"><span class="label label-success"> JOINED </span></p>
         <% else %>
             <% if feeder.payments.where(status: :authorized).blank? %>
-            <p class="text-center"><%= link_to '<button class="btn btn-danger" type="button">Pay Now</button>'.html_safe , feeding_feeders_path(feeder.feeding.id), method: :post, data:  {no_turbolink: true} %> </p>
+            <p class="text-center"><%= link_to '<button class="btn btn-danger" type="button">Pay Now</button>'.html_safe , feeding_feeder_path(feeder.feeding.id, feeding.id) %> </p>
             <% else %>
             <p class="text-center lead"><span class="label label-success"> PAID </span></p>
             <% end %>
@@ -88,7 +88,7 @@
         <p class="text-center lead"><span class="label label-warning"> FREE </span></p>
         <% else %>
             <% if feeder.payments.where(status: :authorized).blank? %>
-            <p class="text-center"><%= link_to '<button class="btn btn-sm btn-danger" type="button">Pay Now</button>'.html_safe , feeding_feeders_path(feeder.feeding.id), method: :post, data:  {no_turbolink: true} %> </p>
+            <p class="text-center"><%= link_to '<button class="btn btn-sm btn-danger" type="button">Pay Now</button>'.html_safe , feeding_feeder_path(feeder.feeding.id, feeding.id) %> </p>
             <% else %>
             <p class="text-center lead"><span class="label label-primary"><strong>Price: </strong> RM <%= feeder.feeding.price.to_s %> </span></p>
             <% end %>
@@ -102,7 +102,7 @@
         <p class="text-center lead"><span class="label label-primary"><strong>Price: </strong> RM <%= feeder.feeding.price.to_s %> </span></p>
         <% else %>
             <% if feeder.payments.where(status: :authorized).blank? %>
-            <p class="text-center"><%= link_to '<button class="btn btn-sm btn-danger" type="button">Pay Now</button>'.html_safe , feeding_feeders_path(feeder.feeding.id), method: :post, data:  {no_turbolink: true} %> </p>
+            <p class="text-center"><%= link_to '<button class="btn btn-sm btn-danger" type="button">Pay Now</button>'.html_safe , feeding_feeder_path(feeder.feeding.id, feeding.id) %> </p>
             <% else %>
             <p class="text-center lead"><span class="label label-primary"><strong>Price: </strong> RM <%= feeder.feeding.price.to_s %> </span></p>
             <% end %>
@@ -119,7 +119,7 @@
                                  </p>
                              </div>
                              <div class="stats">
-                             <p><%= link_to 'Delete', user_feeder_path(current_user.id, feeder.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-info", style: "margin-top:25%" %></p>
+                             <p><%= link_to 'Delete', feeding_feeder_path(feeder.feeding.id, feeder.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-info", style: "margin-top:25%" %></p>
                              </div>
                              <div class="stats">
                                  <h4><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></h4>
